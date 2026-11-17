@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa"><head><meta charset="utf-8"/><script>(function(){let v;try{v=localStorage.getItem('cpu-site-theme')}catch(e){}if(v!=='light'&&v!=='dark'){v=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=v})();</script><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="light dark" name="color-scheme"/><meta content="متن کامل آموزش زمان‌بندی CPU، به صورت فارسی و بخش‌بندی‌شده" name="description"/><title>زمان‌بندی CPU | درس‌نامهٔ کامل</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{color-scheme:light;--bg:#f6f5f2;--paper:#fff;--ink:#20272b;--muted:#747b80;--border:#e3e5e4;--accent:#2b706c;--accentwash:#eaf3f0;--mono:#e7e9ec;--shadow:0 8px 35px rgba(21,38,35,.045)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:22px}body{margin:0;background:var(--bg);color:var(--ink);font-family:Vazirmatn,Tahoma,"Segoe UI",Arial,sans-serif;font-size:15px;line-height:2;direction:rtl}a{color:var(--accent)}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #7dbfba;outline-offset:3px}::selection{background:#bfdbd5}
+.shell{display:grid;grid-template-columns:minmax(265px,305px) minmax(0,1fr);max-width:1540px;margin:auto;min-height:100vh;gap:34px;padding:0 26px 0 34px}.sidebar{position:sticky;top:0;height:100vh;overflow:auto;border-left:1px solid var(--border);padding:30px 0 22px 18px;scrollbar-width:thin}.logo{display:flex;align-items:center;gap:12px;margin-bottom:28px}.logo-mark{width:43px;height:43px;background:#26665f;color:white;border-radius:14px;display:grid;place-items:center;font-size:20px;font-weight:800;direction:ltr}.logo-name{font-size:17px;font-weight:850;line-height:1.6}.logo-sub{color:var(--muted);font-size:11px}.search{width:100%;border:1px solid var(--border);border-radius:12px;padding:11px 14px;background:#fff;outline:none;font-size:13px}.side-caption{font-size:11px;font-weight:800;letter-spacing:.3px;color:var(--muted);margin:22px 5px 11px}.nav{display:grid;gap:3px}.nav-link{display:flex;gap:10px;align-items:flex-start;text-decoration:none;color:#515e62;padding:8px 9px;border-radius:10px;font-size:12.2px;line-height:1.75;transition:background .2s}.nav-link:hover,.nav-link.active{background:var(--accentwash);color:#225d58}.nav-num{direction:ltr;font-size:11px;color:#98a09f;font-family:Arial,sans-serif;padding-top:3px}.side-footer{font-size:10px;color:var(--muted);padding:22px 7px}.main{min-width:0;max-width:1000px;padding:45px 0 110px}.eyebrow{font-weight:800;color:var(--accent);font-size:12px;letter-spacing:.25px}.hero{background:linear-gradient(135deg,#e4f0ec,#f3f5f1 65%,#fafbf8);border:1px solid #dbe9e4;border-radius:26px;padding:36px 40px 32px;margin-bottom:26px}.hero h1{font-size:clamp(26px,3vw,39px);line-height:1.6;letter-spacing:-.7px;margin:7px 0 12px}.hero p{max-width:830px}.intro{font-size:14.5px;color:#34464a}.hero-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:19px}.action{border:1px solid #cbded8;background:#fff;color:#285e59;border-radius:10px;padding:8px 15px;font-size:12px;font-weight:700}.action.primary{background:var(--accent);color:#fff;border-color:var(--accent)}.stats{display:flex;gap:20px;flex-wrap:wrap;margin:24px 2px;color:var(--muted);font-size:12px}.stats strong{font-size:17px;color:var(--ink);margin-left:5px}.chapter{background:var(--paper);border:1px solid var(--border);box-shadow:var(--shadow);border-radius:20px;padding:23px 25px 25px;margin:20px 0;scroll-margin-top:20px}.chapter-header{border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:14px}.chapter-meta{font-size:11px;color:var(--accent);font-weight:750}.meta-dot{padding:0 4px;color:#bcc7c6}.chapter h2{font-size:clamp(17px,2vw,22px);line-height:1.65;margin:7px 0 0}.subsections{display:grid;gap:9px}.subsection{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff}.subsection[open]{border-color:#cfdfdc}.subsection summary{list-style:none;display:flex;align-items:center;gap:11px;cursor:pointer;padding:10px 14px;color:#46545a;font-size:12px;font-weight:750;background:#fafbfa}.subsection summary::-webkit-details-marker{display:none}.sub-index{color:var(--accent);font-family:Arial,sans-serif}.chevron{margin-right:auto;color:#788985;font-size:21px;line-height:1;transition:transform .15s}.subsection[open] .chevron{transform:rotate(180deg)}.sub-body{border-top:1px solid #edf0ee;padding:17px 18px 19px}.content{overflow-wrap:break-word}.content p{margin:0 0 14px}.content p:last-child{margin-bottom:0}.content strong{color:#1f4846}.content ul,.content ol{padding-right:25px;padding-left:0;margin:8px 0 17px}.content li{padding-right:3px}.content li::marker{color:var(--accent)}.content table{border-collapse:collapse;font-size:12px;line-height:1.8;min-width:100%;width:max-content;max-width:none}.content th,.content td{padding:9px 13px;text-align:right;border:1px solid #e3e8e6;white-space:normal}.content th{background:#f0f5f3;font-weight:800}.content tr:nth-child(even) td{background:#fbfcfb}.content .table-wrap{overflow-x:auto;max-width:100%;margin:13px 0 17px;border-radius:9px}.content pre{direction:ltr;text-align:left;overflow-x:auto;background:#1d2b30;color:#e9f2f0;padding:17px 20px;border-radius:11px;font-size:12px;line-height:1.8}.content code{font-family:Consolas,'Courier New',monospace;direction:ltr;unicode-bidi:isolate;background:#edf1f1;border-radius:4px;padding:1px 4px}.content pre code{background:transparent;padding:0;color:inherit}.math-display{direction:ltr;text-align:center;overflow-x:auto;overflow-y:hidden;margin:12px auto 18px;padding:8px 0;max-width:100%;unicode-bidi:isolate}.math-inline{direction:ltr;unicode-bidi:isolate;display:inline-block;vertical-align:middle;white-space:nowrap}.MathJax{direction:ltr!important}.content a{overflow-wrap:anywhere}.hide{display:none!important}.empty{display:none;background:white;border:1px dashed var(--border);border-radius:16px;padding:26px;text-align:center;color:var(--muted)}.footer{text-align:center;color:var(--muted);font-size:12px;margin:45px 0 0}
+@media(max-width:900px){.shell{display:block;padding:0 17px}.sidebar{position:relative;height:auto;overflow:visible;border-left:0;padding:16px 0}.logo{margin-bottom:12px}.sidebar .side-caption,.sidebar .side-footer{display:none}.nav{display:flex;overflow-x:auto;gap:8px;padding:12px 0 3px;scrollbar-width:thin}.nav-link{white-space:nowrap;flex:none;max-width:255px;background:#fff;border:1px solid var(--border);padding:6px 9px;overflow:hidden;text-overflow:ellipsis}.nav-link span:last-child{overflow:hidden;text-overflow:ellipsis}.main{padding:10px 0 65px}.hero{padding:25px 22px}.chapter{padding:17px 13px}.sub-body{padding:13px 12px}.content{font-size:14px}.content th,.content td{padding:7px 10px}}
+@media print{body{background:#fff}.shell{display:block}.sidebar,.hero-actions,.stats{display:none}.main{max-width:100%;padding:0}.chapter{break-inside:avoid;box-shadow:none;margin:10px 0}.subsection:not([open]) .sub-body{display:block}details .sub-body{display:block!important}details summary{display:none}.hero{background:#fff}}
+
+/* Hierarchical right-side table of contents */
+.sidebar{z-index:6;background:var(--bg)}
+.nav{display:block;padding-bottom:20px}
+.nav-group{border-radius:12px;margin:4px 0;border:1px solid transparent;overflow:hidden}
+.nav-group[open]{background:#fff;border-color:var(--border)}
+.nav-group>summary{list-style:none;display:flex;align-items:center;gap:9px;cursor:pointer;font-size:12px;font-weight:750;line-height:1.7;padding:10px 9px}
+.nav-group>summary::-webkit-details-marker{display:none}
+.nav-group>summary:hover{background:var(--accentwash)}
+.nav-title{flex:1;min-width:0}.nav-arrow{color:var(--accent);font-size:20px;transition:transform .2s}.nav-group[open] .nav-arrow{transform:rotate(180deg)}
+.nav-children{border-top:1px solid #edf0ee;padding:6px 8px 10px 5px;display:grid;gap:2px}
+.nav-sub{display:flex;align-items:flex-start;gap:9px;text-decoration:none;color:#536265;font-size:11.5px;line-height:1.85;padding:8px 11px 8px 5px;border-radius:8px solid transparent;border-right:2px solid #dce7e3}
+.nav-sub-index{color:#72968f;font-family:Arial,sans-serif;font-size:10px;padding-top:3px;flex:none}
+.nav-sub:hover,.nav-sub.active{background:var(--accentwash);color:#205e58;border-right-color:var(--accent)}
+.nav-controls{display:flex;gap:6px;margin-top:9px}.nav-controls button{font-size:11px;border:1px solid var(--border);padding:4px 9px;border-radius:8px;background:white}
+.mobile-menu,.mobile-backdrop{display:none}
+.subsection{scroll-margin-top:18px}
+@media(max-width:900px){.shell{display:block;padding:0 15px}.sidebar{position:fixed;right:0;top:0;height:100dvh;width:min(350px,86vw);transform:translateX(103%);transition:transform .23s ease;overflow-y:auto;box-shadow:-8px 0 35px #0002;border-left:1px solid var(--border);padding:24px 15px;z-index:15}.sidebar.open{transform:translateX(0)}.sidebar .side-caption{display:block}.nav{display:block;overflow:visible;padding:0}.nav-group{width:auto}.nav-children{display:grid}.nav-sub{white-space:normal;max-width:none}.mobile-menu{display:flex;position:sticky;top:0;z-index:8;justify-content:space-between;align-items:center;background:var(--bg);border-bottom:1px solid var(--border);margin:0 -15px;padding:9px 15px}.mobile-menu button,.sidebar-close{border:1px solid var(--border);background:white;border-radius:10px;padding:5px 11px}.mobile-backdrop.open{display:block;position:fixed;inset:0;background:#17272866;z-index:14}.main{padding-top:14px}.sidebar-close{display:block!important}}
+@media(min-width:901px){.sidebar-close{display:none!important}}
+@media print{.mobile-menu,.mobile-backdrop{display:none!important}}
+
+/* Refreshed color system and accessible dark/light modes */
+:root{color-scheme:light;--bg:#f3f6fa;--paper:#fff;--ink:#182b3a;--muted:#66788a;--border:#dce4ed;--accent:#166f81;--accentwash:#e6f4f6;--mono:#e8eff4;--shadow:0 12px 36px rgba(21,47,70,.055);--surface:#fff;--surface-2:#f7fafc;--row-alt:#fbfdfe;--nav-ink:#42586a;--strong:#13586a;--code-bg:#18313d;--code-ink:#e5f3f7;--hero-bg:linear-gradient(125deg,#e1f3f6,#edf4fb 62%,#f9fbfd);--hero-border:#d5e8ef;--hero-ink:#304957;--button-ink:#155e71;--button-border:#c2dbe4;--sub-border:#c5dde3;--table-border:#dfe8ee;--table-head:#ebf5f7;--focus:#6ab6c6}
+html[data-theme="dark"]{color-scheme:dark;--bg:#0c1722;--paper:#132535;--ink:#e8f2f9;--muted:#9fb4c4;--border:#2b4254;--accent:#76d4e2;--accentwash:#1d3e4a;--mono:#294454;--shadow:0 12px 40px rgba(0,0,0,.18);--surface:#172d3e;--surface-2:#1b3445;--row-alt:#182e3f;--nav-ink:#c4d9e4;--strong:#a0e4ed;--code-bg:#09131e;--code-ink:#e7f5fa;--hero-bg:linear-gradient(125deg,#173b4d,#172f46 63%,#18293c);--hero-border:#315367;--hero-ink:#c3dce8;--button-ink:#d1edf2;--button-border:#426478;--sub-border:#466c79;--table-border:#345064;--table-head:#1d3b4d;--focus:#8edceb}
+body{background:var(--bg);color:var(--ink)}button:focus-visible,input:focus-visible,a:focus-visible,summary:focus-visible{outline-color:var(--focus)}::selection{background:var(--accentwash)}
+.sidebar{background:var(--bg)}.logo-mark{background:#166f81}.logo-name,.chapter h2,.hero h1{color:var(--ink)}.search{background:var(--surface);color:var(--ink);border-color:var(--border)}.search::placeholder{color:var(--muted)}.nav-group[open]{background:var(--surface);border-color:var(--border)}.nav-group>summary{color:var(--ink)}.nav-group>summary:hover{background:var(--accentwash)}.nav-children{border-top-color:var(--border)}.nav-sub{color:var(--nav-ink);border-right-color:var(--border)}.nav-sub:hover,.nav-sub.active{color:var(--accent);background:var(--accentwash);border-right-color:var(--accent)}.nav-num,.nav-sub-index{color:var(--muted)}.nav-link{color:var(--nav-ink)}.nav-link:hover,.nav-link.active{color:var(--accent);background:var(--accentwash)}.nav-controls button{color:var(--ink);background:var(--surface);border-color:var(--border)}
+.hero{background:var(--hero-bg);border-color:var(--hero-border)}.intro{color:var(--hero-ink)}.action{background:var(--surface);color:var(--button-ink);border-color:var(--button-border)}.action.primary{background:#166f81;color:#fff;border-color:#166f81}.chapter{background:var(--paper);border-color:var(--border)}.subsection{background:var(--surface);border-color:var(--border)}.subsection[open]{border-color:var(--sub-border)}.subsection summary{background:var(--surface-2);color:var(--ink)}.sub-body{border-top-color:var(--border)}.content strong{color:var(--strong)}.content th,.content td{border-color:var(--table-border)}.content th{background:var(--table-head)}.content tr:nth-child(even) td{background:var(--row-alt)}.content pre{background:var(--code-bg);color:var(--code-ink)}.content code{background:var(--mono);color:var(--ink)}.content pre code{background:transparent;color:inherit}.empty{background:var(--paper);border-color:var(--border)}.stats strong{color:var(--ink)}.sidebar-close,.mobile-menu button{color:var(--ink);background:var(--surface);border-color:var(--border)}.mobile-menu{background:var(--bg);border-color:var(--border)}
+.theme-switch{display:flex;align-items:center;gap:12px;width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:12px;margin:-13px 0 17px;background:var(--surface);color:var(--ink);font-size:12px;font-weight:750;text-align:right}.theme-glyph{font-size:22px;line-height:1;color:var(--accent)}.theme-switch:hover,.mobile-theme:hover{background:var(--accentwash)}.mobile-actions{display:flex;align-items:center;gap:8px}.mobile-theme{font-size:19px;min-width:40px;min-height:38px}
+.persian-formula{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;direction:rtl;text-align:center;font-weight:750;font-size:clamp(17px,2vw,22px);line-height:1.9;color:var(--ink);unicode-bidi:plaintext}.formula-arrow{color:var(--accent);font-size:24px;direction:ltr;unicode-bidi:isolate}.mixed-formula{display:flex;justify-content:center;align-items:center;gap:9px;flex-wrap:wrap;direction:ltr;color:var(--ink);font-size:clamp(17px,2vw,21px);line-height:2;unicode-bidi:isolate}.mixed-formula>span[dir="rtl"]{direction:rtl;unicode-bidi:isolate;white-space:nowrap;font-family:Vazirmatn,Tahoma,sans-serif}.math-symbol{white-space:nowrap;direction:ltr;unicode-bidi:isolate}.math-symbol sub{font-family:Vazirmatn,Tahoma,sans-serif;font-size:.65em;display:inline-block;vertical-align:sub}.math-display{direction:ltr;unicode-bidi:isolate;overflow-x:auto;overflow-y:visible}
+@media(max-width:900px){.sidebar{background:var(--bg)}.nav-group[open]{background:var(--surface)}.nav-sub{background:transparent}.theme-switch{margin:4px 0 14px}}
+@media print{html[data-theme="dark"]{color-scheme:light;--bg:#fff;--paper:#fff;--ink:#111;--muted:#555;--border:#ddd;--accent:#166f81;--surface:#fff;--surface-2:#fff;--hero-bg:none;--hero-ink:#333}.theme-switch,.mobile-theme{display:none!important}}
+</style><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},svg:{fontCache:'global'}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head>
+<body><div class="mobile-menu"><strong>زمان‌بندی CPU</strong><div class="mobile-actions"><button aria-label="تغییر حالت روشن و تاریک" class="mobile-theme" id="mobile-theme" type="button">☾</button><button id="mobile-open" type="button">☰ فهرست بخش‌ها</button></div></div><div class="mobile-backdrop" id="mobile-backdrop"></div><div class="shell"><aside class="sidebar"><button class="sidebar-close" id="mobile-close" type="button">بستن ×</button><div class="logo"><div class="logo-mark">CPU</div><div><div class="logo-name">زمان‌بندی پردازنده</div><div class="logo-sub">درس‌نامهٔ فارسی • یک صفحه</div></div></div><button aria-label="تغییر حالت روشن و تاریک" aria-pressed="false" class="theme-switch" id="theme-toggle" type="button"><span aria-hidden="true" class="theme-glyph">☾</span><span class="theme-label">حالت تاریک</span></button><input aria-label="جستجو در متن" class="search" id="search" placeholder="جستجو در همهٔ موضوعات…" type="search"/><div class="side-caption">بخش‌ها و زیربخش‌ها</div><div class="nav-controls"><button id="nav-expand" type="button">نمایش همهٔ زیربخش‌ها</button><button id="nav-collapse" type="button">بستن فهرست</button></div><nav aria-label="فهرست بخش‌ها" class="nav"><details class="nav-group" open=""><summary><span class="nav-num">01</span><span class="nav-title">انتخاب کار و تحویل CPU</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-1-1" href="#sub-1-1"><span class="nav-sub-index">01</span><span>انتخاب فرایند بعدی، وظیفهٔ زمان‌بند کوتاه‌مدت یا CPU Scheduler…</span></a><a class="nav-sub" data-target="sub-1-2" href="#sub-1-2"><span class="nav-sub-index">02</span><span>روش غیرپیش‌دستانه ساده‌تر است، اما کنترل سیستم‌عامل بر زمان تع…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">02</span><span class="nav-title">از کجا بفهمیم یک زمان‌بند خوب است؟</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-2-1" href="#sub-2-1"><span class="nav-sub-index">01</span><span>پیش از مقایسهٔ الگوریتم‌ها باید مشخص کنیم «خوب» یعنی چه. معیار…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">03</span><span class="nav-title">از ترتیب ورود تا کوتاه‌ترین کار</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-3-1" href="#sub-3-1"><span class="nav-sub-index">01</span><span>ساده‌ترین انتخاب این است که هرکس زودتر آمده، زودتر اجرا شود. ا…</span></a><a class="nav-sub" data-target="sub-3-2" href="#sub-3-2"><span class="nav-sub-index">02</span><span>FCFS غیرپیش‌دستانه است؛ بنابراین پاسخ سریع موردنیاز سیستم‌های…</span></a><a class="nav-sub" data-target="sub-3-3" href="#sub-3-3"><span class="nav-sub-index">03</span><span>در این رابطه: \(t_n\) طول واقعی آخرین Burst است. \(\tau_n\) تخ…</span></a><a class="nav-sub" data-target="sub-3-4" href="#sub-3-4"><span class="nav-sub-index">04</span><span>وزن داده‌های قدیمی با توان‌های \(1-\alpha\) کاهش پیدا می‌کند…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">04</span><span class="nav-title">وقتی اهمیت کار از طول آن مهم‌تر است</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-4-1" href="#sub-4-1"><span class="nav-sub-index">01</span><span>همیشه کوتاه‌بودن کار معیار اصلی نیست. ممکن است یک کار به دلیل…</span></a><a class="nav-sub" data-target="sub-4-2" href="#sub-4-2"><span class="nav-sub-index">02</span><span>زمان‌های انتظار به‌ترتیب \(P_1\) تا \(P_4\) : \[ 5,\ 0,\ 13,\…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">05</span><span class="nav-title">تقسیم نوبتی CPU با Round Robin</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-5-1" href="#sub-5-1"><span class="nav-sub-index">01</span><span>در سیستم تعاملی، نمی‌خواهیم یک کار مدت زیادی منتظر اولین فرصت…</span></a><a class="nav-sub" data-target="sub-5-2" href="#sub-5-2"><span class="nav-sub-index">02</span><span>مثال RR با \(q=4\) : فرایند Burst ورود \(P_1\) ۲۴ ۰ \(P_2\) ۳…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">06</span><span class="nav-title">وقتی همهٔ کارها نیاز یکسانی ندارند</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-6-1" href="#sub-6-1"><span class="nav-sub-index">01</span><span>تا اینجا عمدتاً یک صف آماده داشتیم. اما کار تعاملی و کار Batch…</span></a><a class="nav-sub" data-target="sub-6-2" href="#sub-6-2"><span class="nav-sub-index">02</span><span>مثال فصل سه صف دارد: صف سیاست \(Q_0\) RR با Quantum برابر ۸ می…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">07</span><span class="nav-title">از زمان‌بندی فرایند به زمان‌بندی نخ</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-7-1" href="#sub-7-1"><span class="nav-sub-index">01</span><span>با وجود نخ‌ها، واحدی که واقعاً نوبت اجرا می‌گیرد معمولاً نخ اس…</span></a><a class="nav-sub" data-target="sub-7-2" href="#sub-7-2"><span class="nav-sub-index">02</span><span>کد اسلاید ابتدا ویژگی‌های پیش‌فرض را می‌سازد: pthread_attr_ini…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">08</span><span class="nav-title">وقتی چند CPU یا چند هسته داریم</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-8-1" href="#sub-8-1"><span class="nav-sub-index">01</span><span>در سیستم تک‌پردازنده‌ای می‌پرسیدیم «چه کاری اجرا شود؟». در سیس…</span></a><a class="nav-sub" data-target="sub-8-2" href="#sub-8-2"><span class="nav-sub-index">02</span><span>چون مدیریت ساختارهای اصلی متمرکز است، اشتراک‌گذاری و همگام‌ساز…</span></a><a class="nav-sub" data-target="sub-8-3" href="#sub-8-3"><span class="nav-sub-index">03</span><span>مقایسهٔ دو مدل: ویژگی SMP AMP نقش CPUها هم‌رتبه نقش‌ها یا محیط…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">09</span><span class="nav-title">تعادل میان ماندن و جابه‌جاشدن</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-9-1" href="#sub-9-1"><span class="nav-sub-index">01</span><span>اگر فرایندی روی یک CPU اجرا شده باشد، احتمال دارد داده‌ها و دس…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">10</span><span class="nav-title">هستهٔ فیزیکی، نخ سخت‌افزاری و سه سطح زمان‌بندی</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-10-1" href="#sub-10-1"><span class="nav-sub-index">01</span><span>قرارگرفتن چند هسته روی یک تراشه، امکان اجرای موازی بیشتری می‌د…</span></a><a class="nav-sub" data-target="sub-10-2" href="#sub-10-2"><span class="nav-sub-index">02</span><span>در مدل One-to-One، مرحلهٔ جداگانهٔ L2 وجود ندارد. شکل سلسله‌مر…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">11</span><span class="nav-title">وقتی پایان‌یافتن تا موعد، جزئی از درستی است</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-11-1" href="#sub-11-1"><span class="nav-sub-index">01</span><span>تا اینجا معیارهایی مثل انتظار و پاسخ را بهینه می‌کردیم. در سیس…</span></a><a class="nav-sub" data-target="sub-11-2" href="#sub-11-2"><span class="nav-sub-index">02</span><span>این‌ها تاریخ‌های خود فایل‌اند، نه گزارش وضعیت فعلی محصولات. اس…</span></a><a class="nav-sub" data-target="sub-11-3" href="#sub-11-3"><span class="nav-sub-index">03</span><span>عبارت اسلاید دربارهٔ غیرپیش‌دستانه‌بودن Windows XP دقیق نیست…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">12</span><span class="nav-title">دو تأخیر مهم در پاسخ بلادرنگ</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-12-1" href="#sub-12-1"><span class="nav-sub-index">01</span><span>اول، Interrupt Latency است: فاصلهٔ رسیدن وقفه تا آغاز روال سرو…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">13</span><span class="nav-title">کارهای دوره‌ای و انتخاب اولویت</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-13-1" href="#sub-13-1"><span class="nav-sub-index">01</span><span>کار دوره‌ای در فاصله‌های ثابت دوباره به اجرا نیاز دارد. سه پار…</span></a><a class="nav-sub" data-target="sub-13-2" href="#sub-13-2"><span class="nav-sub-index">02</span><span>پس تا Deadline برابر ۸۰، فقط ۳۰ واحد از ۳۵ واحد موردنیازش اجرا…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">14</span><span class="nav-title">سیاست‌های بلادرنگ در POSIX</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-14-1" href="#sub-14-1"><span class="nav-sub-index">01</span><span>استاندارد POSIX.1b رابط‌هایی برای مدیریت نخ‌های بلادرنگ معرفی…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">15</span><span class="nav-title">این ایده‌ها در Linux چگونه استفاده شده‌اند؟</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-15-1" href="#sub-15-1"><span class="nav-sub-index">01</span><span>بخش سیستم‌عامل‌ها دربارهٔ طراحی‌های تاریخیِ نسخه‌های ذکرشده در…</span></a><a class="nav-sub" data-target="sub-15-2" href="#sub-15-2"><span class="nav-sub-index">02</span><span>در کارهای عادی، مقدار nice در این بازه است: \[ -20\leq nice\le…</span></a><a class="nav-sub" data-target="sub-15-3" href="#sub-15-3"><span class="nav-sub-index">03</span><span>کارهای بلادرنگ از اولویت‌های ثابت استفاده می‌کنند و در طرح اول…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">16</span><span class="nav-title">زمان‌بندی در Windows</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-16-1" href="#sub-16-1"><span class="nav-sub-index">01</span><span>Windows زمان‌بندی پیش‌دستانهٔ مبتنی بر اولویت دارد و نخ آماده…</span></a><a class="nav-sub" data-target="sub-16-2" href="#sub-16-2"><span class="nav-sub-index">02</span><span>مثلاً نخ Normal در فرایند Normal، اولویت ۸ دارد. در محدودهٔ مت…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">17</span><span class="nav-title">زمان‌بندی در Solaris</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-17-1" href="#sub-17-1"><span class="nav-sub-index">01</span><span>Solaris شش کلاس معرفی‌شده دارد: کلاس کاربرد TS اشتراک زمانی؛ پ…</span></a><a class="nav-sub" data-target="sub-17-2" href="#sub-17-2"><span class="nav-sub-index">02</span><span>برای مقایسهٔ نخ‌های کلاس‌های مختلف، اولویت هر کلاس به اولویت س…</span></a></div></details><details class="nav-group"><summary><span class="nav-num">18</span><span class="nav-title">چگونه الگوریتم مناسب را انتخاب کنیم؟</span><span class="nav-arrow">⌄</span></summary><div class="nav-children"><a class="nav-sub" data-target="sub-18-1" href="#sub-18-1"><span class="nav-sub-index">01</span><span>بعد از شناخت الگوریتم‌ها، باید آن‌ها را برای نیاز مشخص ارزیابی…</span></a><a class="nav-sub" data-target="sub-18-2" href="#sub-18-2"><span class="nav-sub-index">02</span><span>میانگین انتظار آن ۲۳ است. این روش سریع و ساده است، اما فقط درب…</span></a><a class="nav-sub" data-target="sub-18-3" href="#sub-18-3"><span class="nav-sub-index">03</span><span>ورودی شبیه‌سازی می‌تواند از اعداد تصادفی، توزیع‌های ریاضی یا ت…</span></a></div></details></nav><div class="side-footer">متن اصلی بدون بازنویسی • نمایش راست‌به‌چپ</div></aside>
+<main class="main"><div class="hero"><div class="eyebrow">سیستم‌عامل • فصل پنجم</div><h1>زمان‌بندی CPU</h1><div class="intro content"><p>برای فهم زمان‌بندی CPU، از این سؤال شروع کنیم: <strong>وقتی چند کار آمادهٔ اجرا هستند، CPU را به کدام بدهیم و تا چه زمانی در اختیارش بگذاریم؟</strong> تمام این فصل، از الگوریتم‌های ساده تا زمان‌بندی بلادرنگ و چندپردازنده‌ای، پاسخ‌های مختلف به همین سؤال است.</p>
+<p>توضیح بر اساس اسلایدهای همین فایل است: ch5-cpu-scheduling.pdf</p>
+<p>در فصل‌های قبل دیدیم سیستم‌عامل چگونه با وقفه‌ها و تفکیک حالت کاربر و هسته، کنترل سیستم را حفظ می‌کند؛ چطور از طریق فراخوانی‌های سیستمی به برنامه‌ها خدمات می‌دهد؛ و چگونه فرایندها، PCB، حالت‌های اجرا و ارتباط میان فرایندها را مدیریت می‌کند. بعد هم نخ‌ها، مدل‌های چندنخی و تفاوت نخ کاربر و هسته را شناختیم. حالا قرار است ببینیم این فرایندها و نخ‌ها <strong>چگونه نوبت اجرا می‌گیرند</strong>.</p>
+<p>اجرای یک فرایند معمولاً پیوسته محاسباتی نیست. فرایند مدتی روی CPU دستور اجرا می‌کند، بعد برای عملیاتی مثل خواندن فایل منتظر می‌ماند و دوباره به اجرای محاسبات برمی‌گردد. به بخش اجرای روی CPU، <strong>CPU Burst</strong> و به بخش فعالیت یا انتظار ورودی‌وخروجی، <strong>I/O Burst</strong> می‌گوییم.</p>
+<p>اگر هنگام انتظار یک فرایند، CPU هم بیکار بماند، بخشی از ظرفیت سیستم هدر می‌رود. چندبرنامگی این مشکل را کاهش می‌دهد: وقتی یک فرایند منتظر I/O است، فرایند دیگری اجرا می‌شود.</p>
+<p>پس زمان‌بند مرتب با مجموعه‌ای از کارهای آماده روبه‌رو می‌شود. برای انتخاب میان آن‌ها، طول CPU Burst اهمیت دارد. نمودار اسلایدها نشان می‌دهد <strong>Burstهای کوتاه فراوان‌اند و Burstهای بلند کم‌ترند</strong>؛ ویژگی‌ای که بعداً دلیل استفاده از الگوریتم‌هایی مثل SJF می‌شود.</p>
+</div><div class="hero-actions"><button class="action primary" id="expand" type="button">باز کردن همهٔ زیربخش‌ها</button><button class="action" id="collapse" type="button">بستن همهٔ زیربخش‌ها</button></div></div><div class="stats"><span><strong>۱۸</strong> موضوع اصلی</span><span><strong>38</strong> زیربخش</span><span>تمام مطالب در یک صفحه</span></div><div class="empty" id="empty">موردی پیدا نشد.</div><section class="chapter" data-title="انتخاب کار و تحویل CPU" id="section-1">
+<header class="chapter-header"><div class="chapter-meta">موضوع 01 <span class="meta-dot">·</span> 2 زیربخش</div><h2>انتخاب کار و تحویل CPU</h2></header>
+<div class="subsections"><details class="subsection" id="sub-1-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>انتخاب فرایند بعدی، وظیفهٔ <strong>زمان‌بند کوتاه‌مدت یا CPU Scheduler</strong> است. این زمان‌بند از میان فرایندهای صف آماده انتخاب می‌کند. «صف» بودن هم الزاماً به معنی FIFO نیست؛ ترتیب می‌تواند براساس اولویت، طول Burst یا معیار دیگری باشد.</p>
+<p>تصمیم زمان‌بندی ممکن است هنگام چهار رویداد مطرح شود:</p>
+<table>
+<thead>
+<tr>
+<th>رویداد</th>
+<th>تغییر حالت</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>درخواست I/O یا انتظار برای رویداد</td>
+<td>Running → Waiting</td>
+</tr>
+<tr>
+<td>قطع اجرای فرایند، مثلاً با پایان سهم زمانی</td>
+<td>Running → Ready</td>
+</tr>
+<tr>
+<td>تمام‌شدن انتظار، مثلاً اتمام I/O</td>
+<td>Waiting → Ready</td>
+</tr>
+<tr>
+<td>پایان اجرای فرایند</td>
+<td>خاتمه</td>
+</tr>
+</tbody>
+</table>
+<p>اینجا دو شیوهٔ اصلی از هم جدا می‌شوند.</p>
+<p>در <strong>زمان‌بندی غیرپیش‌دستانه، Non-preemptive</strong>، فرایندی که CPU گرفته، آن را نگه می‌دارد تا منتظر شود یا کارش تمام شود. بنابراین زمان‌بندی فقط در رویداد اول و چهارم انجام می‌شود. این روش را Cooperative هم می‌نامند؛ مثال تاریخی اسلاید، Windows 3.x است.</p>
+<p>در <strong>زمان‌بندی پیش‌دستانه، Preemptive</strong>، سیستم‌عامل می‌تواند CPU را از فرایند جاری پس بگیرد؛ مثلاً چون سهم زمانی آن تمام شده یا کار مهم‌تری آماده شده است. Linux، Windows 95/NT و Mac OS X مثال‌های اسلاید هستند.</p>
+</div>
+</details><details class="subsection" id="sub-1-2">
+<summary><span class="sub-index">02</span><span>زیربخش 2</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>روش غیرپیش‌دستانه ساده‌تر است، اما کنترل سیستم‌عامل بر زمان تعویض کمتر می‌شود. اگر فرایندی منتظر نشود و پایان هم نیابد، ممکن است CPU را تصاحب کند؛ همان <strong>Process Hogging</strong>.</p>
+<p>روش پیش‌دستانه انعطاف بیشتری دارد، ولی اجرای آن پیچیده‌تر است. اگر فرایندی وسط تغییر دادهٔ مشترک قطع شود، اجرای دیگری ممکن است داده را نیمه‌کاره ببیند. همین مسئله در کد هسته و هنگام فعالیت‌های حساس سیستم‌عامل هم مطرح می‌شود؛ بنابراین باید پیش‌دستی، وقفه‌ها و دسترسی به داده‌ها هماهنگ شوند.</p>
+<p>پس از انتخاب فرایند، نوبت <strong>Dispatcher</strong> است که CPU را عملاً تحویل بدهد. این کار شامل ذخیره و بازیابی وضعیت اجرا یا Context Switch، رفتن به حالت کاربر و ادامهٔ برنامه از محل درست است.</p>
+<p>مدت لازم برای متوقف‌کردن اجرای قبلی و آغاز اجرای بعدی را <strong>Dispatch Latency</strong> می‌نامیم. بنابراین انتخاب خوب به‌تنهایی کافی نیست؛ تحویل CPU هم زمان می‌برد.</p>
+</div>
+</details></div></section><section class="chapter" data-title="از کجا بفهمیم یک زمان‌بند خوب است؟" id="section-2">
+<header class="chapter-header"><div class="chapter-meta">موضوع 02 <span class="meta-dot">·</span> 1 زیربخش</div><h2>از کجا بفهمیم یک زمان‌بند خوب است؟</h2></header>
+<div class="subsections"><details class="subsection" id="sub-2-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>پیش از مقایسهٔ الگوریتم‌ها باید مشخص کنیم «خوب» یعنی چه. معیارهای فصل این‌ها هستند:</p>
+<table>
+<thead>
+<tr>
+<th>معیار</th>
+<th>چیزی که اندازه می‌گیرد</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU Utilization</td>
+<td>نسبت زمانی که CPU مشغول است</td>
+</tr>
+<tr>
+<td>Throughput</td>
+<td>تعداد فرایندهای تمام‌شده در واحد زمان</td>
+</tr>
+<tr>
+<td>Turnaround Time</td>
+<td>فاصلهٔ ورود فرایند تا پایان کامل آن</td>
+</tr>
+<tr>
+<td>Waiting Time</td>
+<td>مجموع انتظار در صف آماده</td>
+</tr>
+<tr>
+<td>Response Time</td>
+<td>فاصلهٔ درخواست تا اولین پاسخ؛ در مثال‌های زمان‌بندی، اولین اجرا</td>
+</tr>
+</tbody>
+</table>
+<p>برای مثال‌های این فصل، اگر <span class="math-inline" dir="ltr">\(A\)</span> زمان ورود، <span class="math-inline" dir="ltr">\(C\)</span> زمان پایان، <span class="math-inline" dir="ltr">\(B\)</span> زمان CPU موردنیاز و <span class="math-inline" dir="ltr">\(S\)</span> زمان اولین اجرا باشد:</p>
+<div class="math-display" dir="ltr">\[
+Turnaround=C-A
+\]</div>
+<div class="math-display" dir="ltr">\[
+Waiting=Turnaround-B
+\]</div>
+<div class="math-display" dir="ltr">\[
+Response=S-A
+\]</div>
+<p>فرمول Waiting بالا برای مثال‌هایی است که انتظار I/O ندارند؛ انتظار I/O جزو انتظار در صف آماده نیست.</p>
+<p>تفاوت مهم این است که <strong>Response به شروع پاسخ مربوط است و Turnaround به پایان کامل کار</strong>. ممکن است برنامه سریع شروع به پاسخ‌دادن کند، اما دیر تمام شود.</p>
+<p>هدف معمولاً افزایش بهره‌برداری و Throughput و کاهش زمان‌های انتظار، پاسخ و اتمام است. البته فقط میانگین مهم نیست؛ بیشترین زمان و واریانس هم ممکن است اهمیت داشته باشند. واریانس کمتر یعنی رفتار زمانی یکنواخت‌تر و قابل‌پیش‌بینی‌تر.</p>
+</div>
+</details></div></section><section class="chapter" data-title="از ترتیب ورود تا کوتاه‌ترین کار" id="section-3">
+<header class="chapter-header"><div class="chapter-meta">موضوع 03 <span class="meta-dot">·</span> 4 زیربخش</div><h2>از ترتیب ورود تا کوتاه‌ترین کار</h2></header>
+<div class="subsections"><details class="subsection" id="sub-3-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>ساده‌ترین انتخاب این است که هرکس زودتر آمده، زودتر اجرا شود. این همان <strong>FCFS</strong> است.</p>
+<p>سه فرایند زیر را در نظر بگیر:</p>
+<table>
+<thead>
+<tr>
+<th>فرایند</th>
+<th style="text-align:right">Burst</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+<td style="text-align:right">۲۴</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+<td style="text-align:right">۳</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_3\)</span></td>
+<td style="text-align:right">۳</td>
+</tr>
+</tbody>
+</table>
+<p>اگر ترتیب صف <span class="math-inline" dir="ltr">\(P_1,P_2,P_3\)</span> باشد، اجرای آن‌ها چنین است:</p>
+<table>
+<thead>
+<tr>
+<th>فرایند</th>
+<th>بازهٔ اجرا</th>
+<th style="text-align:right">زمان انتظار</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+<td>۰ تا ۲۴</td>
+<td style="text-align:right">۰</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+<td>۲۴ تا ۲۷</td>
+<td style="text-align:right">۲۴</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_3\)</span></td>
+<td>۲۷ تا ۳۰</td>
+<td style="text-align:right">۲۷</td>
+</tr>
+</tbody>
+</table>
+<p>پس:</p>
+<div class="math-display" dir="ltr">\[
+\overline{W}=\frac{0+24+27}{3}=17
+\]</div>
+<p>حالا فقط ترتیب را به <span class="math-inline" dir="ltr">\(P_2,P_3,P_1\)</span> تغییر بده. دو کار کوتاه تا زمان ۶ تمام می‌شوند و کار بلند بعد از آن اجرا می‌شود:</p>
+<div class="math-display" dir="ltr">\[
+\overline{W}=\frac{0+3+6}{3}=3
+\]</div>
+<p>مقدار کار هیچ تغییری نکرده، اما میانگین انتظار از ۱۷ به ۳ رسیده است. پس FCFS به ترتیب ورود بسیار حساس است.</p>
+<p>وقتی کارهای کوتاه پشت کار بلند گیر می‌کنند، <strong>Convoy Effect یا اثر کاروانی</strong> ایجاد می‌شود. در ترکیب یک کار CPU-bound و چند کار I/O-bound، کار بلند CPU را نگه می‌دارد و کارهای کوتاه دیرتر فرصت پیدا می‌کنند عملیات I/O بعدی خود را آغاز کنند.</p>
+</div>
+</details><details class="subsection" id="sub-3-2">
+<summary><span class="sub-index">02</span><span>زیربخش 2</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>FCFS غیرپیش‌دستانه است؛ بنابراین پاسخ سریع موردنیاز سیستم‌های تعاملی یا رعایت موعد سیستم‌های بلادرنگ را تضمین نمی‌کند.</p>
+<p>این مشاهده ما را به <strong>SJF، کوتاه‌ترین کار اول</strong> می‌رساند: از میان کارهای آماده، کاری را انتخاب کن که <strong>CPU Burst بعدی کوتاه‌تری دارد</strong>. منظور، طول کل برنامه نیست.</p>
+<p>برای کارهایی که هم‌زمان آماده‌اند، SJF کمترین میانگین انتظار را ایجاد می‌کند. مثال اسلاید:</p>
+<table>
+<thead>
+<tr>
+<th>فرایند</th>
+<th style="text-align:right">Burst</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+<td style="text-align:right">۶</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+<td style="text-align:right">۸</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_3\)</span></td>
+<td style="text-align:right">۷</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_4\)</span></td>
+<td style="text-align:right">۳</td>
+</tr>
+</tbody>
+</table>
+<p>ترتیب اجرا:</p>
+<div class="math-display" dir="ltr">\[
+P_4 \rightarrow P_1 \rightarrow P_3 \rightarrow P_2
+\]</div>
+<table>
+<thead>
+<tr>
+<th>فرایند</th>
+<th>بازهٔ اجرا</th>
+<th style="text-align:right">انتظار</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_4\)</span></td>
+<td>۰ تا ۳</td>
+<td style="text-align:right">۰</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+<td>۳ تا ۹</td>
+<td style="text-align:right">۳</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_3\)</span></td>
+<td>۹ تا ۱۶</td>
+<td style="text-align:right">۹</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+<td>۱۶ تا ۲۴</td>
+<td style="text-align:right">۱۶</td>
+</tr>
+</tbody>
+</table>
+<div class="math-display" dir="ltr">\[
+\overline{W}=\frac{0+3+9+16}{4}=7
+\]</div>
+<p>اما SJF دو مشکل دارد. اول اینکه طول Burst بعدی را معمولاً نمی‌دانیم. دوم اینکه اگر دائماً کار کوتاه برسد، کار بلند ممکن است مرتب عقب بیفتد و دچار <strong>Starvation یا گرسنگی</strong> شود.</p>
+<p>برای مشکل اول، طول Burst را تخمین می‌زنیم. روش اسلاید <strong>میانگین‌گیری نمایی</strong> است:</p>
+<div class="math-display" dir="ltr">\[
+\tau_{n+1}=\alpha t_n+(1-\alpha)\tau_n
+\]</div>
+</div>
+</details><details class="subsection" id="sub-3-3">
+<summary><span class="sub-index">03</span><span>زیربخش 3</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>در این رابطه:</p>
+<ul>
+<li><span class="math-inline" dir="ltr">\(t_n\)</span> طول واقعی آخرین Burst است.</li>
+<li><span class="math-inline" dir="ltr">\(\tau_n\)</span> تخمین قبلی است.</li>
+<li><span class="math-inline" dir="ltr">\(\tau_{n+1}\)</span> تخمین Burst بعدی است.</li>
+<li><span class="math-inline" dir="ltr">\(\alpha\)</span> بین صفر و یک است و وزن مشاهدهٔ جدید را تعیین می‌کند.</li>
+</ul>
+<p>با <span class="math-inline" dir="ltr">\(\alpha=\frac12\)</span>، تخمین جدید میانگین آخرین مشاهده و تخمین قبلی می‌شود.</p>
+<p>در شکل اسلاید، Burstهای واقعی چنین‌اند:</p>
+<div class="math-display" dir="ltr">\[
+6,\ 4,\ 6,\ 4,\ 13,\ 13,\ 13,\ldots
+\]</div>
+<p>اگر تخمین اولیه ۱۰ باشد، تخمین‌ها تقریباً این مسیر را طی می‌کنند:</p>
+<div class="math-display" dir="ltr">\[
+10,\ 8,\ 6,\ 6,\ 5,\ 9,\ 11,\ 12,\ldots
+\]</div>
+<p>مثلاً بعد از مشاهدهٔ اولین Burst:</p>
+<div class="math-display" dir="ltr"><div class="mixed-formula" dir="ltr"><span class="math-symbol" dir="ltr">τ<sub dir="rtl">بعدی</sub></span><span>=</span><span class="math-inline" dir="ltr">\(\frac{6+10}{2}=8\)</span></div></div>
+<p>تخمین به تغییر رفتار واکنش نشان می‌دهد، ولی به‌اندازهٔ دادهٔ واقعی ناگهانی تغییر نمی‌کند.</p>
+<p>اگر <span class="math-inline" dir="ltr">\(\alpha=0\)</span> باشد:</p>
+<div class="math-display" dir="ltr">\[
+\tau_{n+1}=\tau_n
+\]</div>
+<p>مشاهدهٔ جدید نادیده گرفته می‌شود. اگر <span class="math-inline" dir="ltr">\(\alpha=1\)</span> باشد:</p>
+<div class="math-display" dir="ltr">\[
+\tau_{n+1}=t_n
+\]</div>
+<p>فقط آخرین Burst اثر دارد.</p>
+<p>با بازکردن فرمول، دلیل نام «نمایی» روشن می‌شود:</p>
+<div class="math-display" dir="ltr">\[
+\tau_{n+1}
+=
+\alpha t_n
++
+(1-\alpha)\alpha t_{n-1}
++
+(1-\alpha)^2\alpha t_{n-2}
++\cdots+
+(1-\alpha)^{n+1}\tau_0
+\]</div>
+</div>
+</details><details class="subsection" id="sub-3-4">
+<summary><span class="sub-index">04</span><span>زیربخش 4</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>وزن داده‌های قدیمی با توان‌های <span class="math-inline" dir="ltr">\(1-\alpha\)</span> کاهش پیدا می‌کند؛ یعنی گذشتهٔ نزدیک معمولاً مهم‌تر از گذشتهٔ دور است.</p>
+<p>حالا اگر اجازه بدهیم کار کوتاه‌تر، اجرای کار جاری را قطع کند، به <strong>SRTF، کوتاه‌ترین زمان باقی‌مانده اول</strong> می‌رسیم.</p>
+<table>
+<thead>
+<tr>
+<th>فرایند</th>
+<th style="text-align:right">ورود</th>
+<th style="text-align:right">Burst</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+<td style="text-align:right">۰</td>
+<td style="text-align:right">۸</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+<td style="text-align:right">۱</td>
+<td style="text-align:right">۴</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_3\)</span></td>
+<td style="text-align:right">۲</td>
+<td style="text-align:right">۹</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_4\)</span></td>
+<td style="text-align:right">۳</td>
+<td style="text-align:right">۵</td>
+</tr>
+</tbody>
+</table>
+<p>در زمان صفر، <span class="math-inline" dir="ltr">\(P_1\)</span> شروع می‌شود. در زمان ۱، از آن ۷ واحد باقی مانده، اما <span class="math-inline" dir="ltr">\(P_2\)</span> فقط ۴ واحد می‌خواهد؛ پس <span class="math-inline" dir="ltr">\(P_1\)</span> قطع می‌شود.</p>
+<p>اجرای کامل:</p>
+<table>
+<thead>
+<tr>
+<th>بازه</th>
+<th>فرایند</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>۰ تا ۱</td>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+<tr>
+<td>۱ تا ۵</td>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+</tr>
+<tr>
+<td>۵ تا ۱۰</td>
+<td><span class="math-inline" dir="ltr">\(P_4\)</span></td>
+</tr>
+<tr>
+<td>۱۰ تا ۱۷</td>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+<tr>
+<td>۱۷ تا ۲۶</td>
+<td><span class="math-inline" dir="ltr">\(P_3\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>با استفاده از زمان پایان، انتظارها به دست می‌آیند:</p>
+<div class="math-display" dir="ltr">\[
+W_1=17-0-8=9
+\]</div>
+<div class="math-display" dir="ltr">\[
+W_2=5-1-4=0
+\]</div>
+<div class="math-display" dir="ltr">\[
+W_3=26-2-9=15
+\]</div>
+<div class="math-display" dir="ltr">\[
+W_4=10-3-5=2
+\]</div>
+<div class="math-display" dir="ltr">\[
+\overline{W}=\frac{9+0+15+2}{4}=6.5
+\]</div>
+<p>برای همین ورودی، SJF غیرپیش‌دستانه میانگین انتظار ۷٫۷۵ دارد.</p>
+<p>مبنای انتخاب SRTF، <strong>زمان باقی‌مانده در همان لحظه</strong> است؛ طول اولیهٔ فرایند جاری به‌تنهایی ملاک نیست.</p>
+</div>
+</details></div></section><section class="chapter" data-title="وقتی اهمیت کار از طول آن مهم‌تر است" id="section-4">
+<header class="chapter-header"><div class="chapter-meta">موضوع 04 <span class="meta-dot">·</span> 2 زیربخش</div><h2>وقتی اهمیت کار از طول آن مهم‌تر است</h2></header>
+<div class="subsections"><details class="subsection" id="sub-4-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>همیشه کوتاه‌بودن کار معیار اصلی نیست. ممکن است یک کار به دلیل وظیفه‌اش مهم‌تر باشد. در <strong>زمان‌بندی اولویتی</strong>، به هر فرایند عدد اولویت می‌دهیم و کار دارای بالاترین اولویت را انتخاب می‌کنیم.</p>
+<p>در قرارداد مثال‌های این بخش:</p>
+<div class="math-display" dir="ltr"><div class="persian-formula" dir="rtl"><span>عدد کوچک‌تر</span><span aria-label="نتیجه" class="formula-arrow">⟹</span><span>اولویت بالاتر</span></div></div>
+<p>این الگوریتم می‌تواند پیش‌دستانه یا غیرپیش‌دستانه باشد. SJF هم از این دید نوعی زمان‌بندی اولویتی است که در آن Burst کوتاه‌تر، اهمیت بیشتری دارد.</p>
+<p>مشکل، گرسنگی کارهای کم‌اولویت است. راه‌حل مطرح‌شده <strong>Aging</strong> است: هرچه کار بیشتر منتظر بماند، اولویتش بالاتر برود.</p>
+<p>مثال پیش‌دستانهٔ اسلاید:</p>
+<table>
+<thead>
+<tr>
+<th>فرایند</th>
+<th style="text-align:right">Burst</th>
+<th style="text-align:right">اولویت</th>
+<th style="text-align:right">ورود</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+<td style="text-align:right">۱۱</td>
+<td style="text-align:right">۳</td>
+<td style="text-align:right">۰</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+<td style="text-align:right">۵</td>
+<td style="text-align:right">۱</td>
+<td style="text-align:right">۱</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_3\)</span></td>
+<td style="text-align:right">۲</td>
+<td style="text-align:right">۴</td>
+<td style="text-align:right">۳</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_4\)</span></td>
+<td style="text-align:right">۱</td>
+<td style="text-align:right">۵</td>
+<td style="text-align:right">۴</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math-inline" dir="ltr">\(P_1\)</span> شروع می‌شود، اما در زمان ۱، <span class="math-inline" dir="ltr">\(P_2\)</span> با اولویت بالاتر می‌رسد:</p>
+<table>
+<thead>
+<tr>
+<th>بازه</th>
+<th>فرایند</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>۰ تا ۱</td>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+<tr>
+<td>۱ تا ۶</td>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+</tr>
+<tr>
+<td>۶ تا ۱۶</td>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+<tr>
+<td>۱۶ تا ۱۸</td>
+<td><span class="math-inline" dir="ltr">\(P_3\)</span></td>
+</tr>
+<tr>
+<td>۱۸ تا ۱۹</td>
+<td><span class="math-inline" dir="ltr">\(P_4\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><details class="subsection" id="sub-4-2">
+<summary><span class="sub-index">02</span><span>زیربخش 2</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>زمان‌های انتظار به‌ترتیب <span class="math-inline" dir="ltr">\(P_1\)</span> تا <span class="math-inline" dir="ltr">\(P_4\)</span>:</p>
+<div class="math-display" dir="ltr">\[
+5,\ 0,\ 13,\ 14
+\]</div>
+<p>پس:</p>
+<div class="math-display" dir="ltr">\[
+\overline{W}=\frac{5+0+13+14}{4}=8
+\]</div>
+<p>عدد ۸٫۲ درج‌شده در اسلاید با این جدول و نمودار سازگار نیست؛ مقدار درست این مثال ۸ است.</p>
+</div>
+</details></div></section><section class="chapter" data-title="تقسیم نوبتی CPU با Round Robin" id="section-5">
+<header class="chapter-header"><div class="chapter-meta">موضوع 05 <span class="meta-dot">·</span> 2 زیربخش</div><h2>تقسیم نوبتی CPU با Round Robin</h2></header>
+<div class="subsections"><details class="subsection" id="sub-5-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>در سیستم تعاملی، نمی‌خواهیم یک کار مدت زیادی منتظر اولین فرصت اجرا بماند. <strong>Round Robin یا RR</strong> برای هر کار یک سهم زمانی محدود، یعنی <strong>Quantum برابر <span class="math-inline" dir="ltr">\(q\)</span></strong>، در نظر می‌گیرد.</p>
+<p>کار حداکثر <span class="math-inline" dir="ltr">\(q\)</span> واحد اجرا می‌شود. اگر تمام نشد، اجرای آن قطع و به انتهای صف منتقل می‌شود.</p>
+<p>اگر <span class="math-inline" dir="ltr">\(n\)</span> کار آماده داشته باشیم، هرکدام تقریباً <span class="math-inline" dir="ltr">\(\frac1n\)</span> زمان CPU را در قطعات حداکثر <span class="math-inline" dir="ltr">\(q\)</span> می‌گیرند. در مدل ساده و بدون سربار، انتظار بین دو نوبت یک کار حداکثر:</p>
+<div class="math-display" dir="ltr">\[
+(n-1)q
+\]</div>
+<p>است.</p>
+<p>تایمر پایان Quantum را اعلام می‌کند. اما انتخاب <span class="math-inline" dir="ltr">\(q\)</span> تعیین‌کننده است:</p>
+<ul>
+<li>Quantum خیلی بزرگ، RR را به FCFS نزدیک می‌کند.</li>
+<li>Quantum خیلی کوچک، دفعات قطع اجرا و سربار را بالا می‌برد.</li>
+</ul>
+<p>برای یک کار با زمان اجرای ۱۰ واحد، شکل اسلاید نشان می‌دهد:</p>
+<table>
+<thead>
+<tr>
+<th>Quantum</th>
+<th style="text-align:right">تعداد قطع میانی</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>۱۲</td>
+<td style="text-align:right">۰</td>
+</tr>
+<tr>
+<td>۶</td>
+<td style="text-align:right">۱</td>
+</tr>
+<tr>
+<td>۱</td>
+<td style="text-align:right">۹</td>
+</tr>
+</tbody>
+</table>
+<p>بنابراین Quantum باید در مقایسه با زمان Context Switch بزرگ باشد. اعداد نمونهٔ اسلاید، Quantum حدود ۱۰ تا ۱۰۰ میلی‌ثانیه و Context Switch کمتر از ۱۰ میکروثانیه‌اند.</p>
+</div>
+</details><details class="subsection" id="sub-5-2">
+<summary><span class="sub-index">02</span><span>زیربخش 2</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>مثال RR با <span class="math-inline" dir="ltr">\(q=4\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th>فرایند</th>
+<th style="text-align:right">Burst</th>
+<th style="text-align:right">ورود</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+<td style="text-align:right">۲۴</td>
+<td style="text-align:right">۰</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+<td style="text-align:right">۳</td>
+<td style="text-align:right">۱</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_3\)</span></td>
+<td style="text-align:right">۳</td>
+<td style="text-align:right">۲</td>
+</tr>
+</tbody>
+</table>
+<p>اجرای آن:</p>
+<table>
+<thead>
+<tr>
+<th>بازه</th>
+<th>فرایند</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>۰ تا ۴</td>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+<tr>
+<td>۴ تا ۷</td>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+</tr>
+<tr>
+<td>۷ تا ۱۰</td>
+<td><span class="math-inline" dir="ltr">\(P_3\)</span></td>
+</tr>
+<tr>
+<td>۱۰ تا ۱۴</td>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+<tr>
+<td>۱۴ تا ۱۸</td>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+<tr>
+<td>۱۸ تا ۲۲</td>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+<tr>
+<td>۲۲ تا ۲۶</td>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+<tr>
+<td>۲۶ تا ۳۰</td>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>دو کار کوتاه فرصت پیدا می‌کنند پیش از پایان کار بلند اجرا شوند. بعد از زمان ۱۰، فقط <span class="math-inline" dir="ltr">\(P_1\)</span> باقی مانده و هر بار دوباره خودش انتخاب می‌شود.</p>
+<p>RR معمولاً پاسخ اولیهٔ مناسبی برای کارهای تعاملی فراهم می‌کند، اما ممکن است میانگین Turnaround آن از SJF بیشتر باشد.</p>
+<p>تأثیر Quantum بر Turnaround هم یکنواخت نیست. در مثال Burstهای <span class="math-inline" dir="ltr">\(6,3,1,7\)</span>، نمودار با تغییر Quantum بالا و پایین می‌رود، چون ترتیب اتمام کارها تغییر می‌کند. قاعدهٔ تجربی اسلاید این است که <strong>حدود ۸۰٪ Burstها از Quantum کوتاه‌تر باشند</strong> تا بیشترشان در یک نوبت تمام شوند.</p>
+<p>اسلاید یک مثال تاریخی از CDC هم می‌آورد: استفاده از یک مجموعه سخت‌افزار پردازشی با ده بانک ثبات، برای نگهداری وضعیت ده جریان اجرا. این طراحی شبیه چند پردازندهٔ کندتر دیده می‌شود، ولی با استفاده از فاصله‌های انتظار حافظه می‌تواند بهره‌برداری بهتری از سخت‌افزار داشته باشد.</p>
+</div>
+</details></div></section><section class="chapter" data-title="وقتی همهٔ کارها نیاز یکسانی ندارند" id="section-6">
+<header class="chapter-header"><div class="chapter-meta">موضوع 06 <span class="meta-dot">·</span> 2 زیربخش</div><h2>وقتی همهٔ کارها نیاز یکسانی ندارند</h2></header>
+<div class="subsections"><details class="subsection" id="sub-6-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>تا اینجا عمدتاً یک صف آماده داشتیم. اما کار تعاملی و کار Batch الزاماً نباید سیاست یکسانی داشته باشند.</p>
+<p>در <strong>Multilevel Queue</strong>، کارها به گروه‌های ثابت تقسیم می‌شوند. مثلاً:</p>
+<ul>
+<li>Foreground برای کارهای تعاملی.</li>
+<li>Background برای کارهای Batch.</li>
+</ul>
+<p>هر گروه الگوریتم خودش را دارد؛ مثلاً RR برای Foreground و FCFS برای Background.</p>
+<p>حالا دو تصمیم لازم است: انتخاب کار <strong>داخل هر صف</strong> و تقسیم CPU <strong>میان صف‌ها</strong>.</p>
+<p>تقسیم میان صف‌ها می‌تواند با اولویت ثابت انجام شود؛ یعنی تا صف بالاتر خالی نشده، صف پایین‌تر اجرا نشود. این روش احتمال گرسنگی دارد. راه دیگر، تقسیم زمان است؛ مثلاً ۸۰٪ CPU برای Foreground و ۲۰٪ برای Background.</p>
+<p>شکل اسلاید، صف‌ها را از بالاترین به پایین‌ترین اولویت چنین نشان می‌دهد: فرایندهای سیستم، تعاملی، ویرایش تعاملی، Batch و دانشجویی.</p>
+<p>محدودیت این مدل، ثابت‌بودن عضویت صف است. <strong>Multilevel Feedback Queue یا MLFQ</strong> این محدودیت را برمی‌دارد: کار می‌تواند با توجه به رفتارش بین صف‌ها جابه‌جا شود.</p>
+<p>برای تعریف MLFQ باید تعداد صف‌ها، الگوریتم هر صف، اولویت یا سهم صف‌ها، شرایط ارتقا و تنزل و صف ورود کار مشخص شود. Aging هم می‌تواند با انتقال کار منتظر به صف بالاتر پیاده‌سازی شود.</p>
+</div>
+</details><details class="subsection" id="sub-6-2">
+<summary><span class="sub-index">02</span><span>زیربخش 2</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>مثال فصل سه صف دارد:</p>
+<table>
+<thead>
+<tr>
+<th>صف</th>
+<th>سیاست</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math-inline" dir="ltr">\(Q_0\)</span></td>
+<td>RR با Quantum برابر ۸ میلی‌ثانیه</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(Q_1\)</span></td>
+<td>RR با Quantum برابر ۱۶ میلی‌ثانیه</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(Q_2\)</span></td>
+<td>FCFS</td>
+</tr>
+</tbody>
+</table>
+<p>کار جدید ابتدا وارد <span class="math-inline" dir="ltr">\(Q_0\)</span> می‌شود. اگر در ۸ میلی‌ثانیه تمام نشود، به <span class="math-inline" dir="ltr">\(Q_1\)</span> می‌رود و ۱۶ میلی‌ثانیهٔ دیگر فرصت می‌گیرد. اگر باز هم تمام نشد، به <span class="math-inline" dir="ltr">\(Q_2\)</span> منتقل می‌شود.</p>
+<p>در نتیجه، کارهای کوتاه معمولاً در صف‌های بالا تمام می‌شوند و کارهای بلند به پایین می‌روند.</p>
+</div>
+</details></div></section><section class="chapter" data-title="از زمان‌بندی فرایند به زمان‌بندی نخ" id="section-7">
+<header class="chapter-header"><div class="chapter-meta">موضوع 07 <span class="meta-dot">·</span> 2 زیربخش</div><h2>از زمان‌بندی فرایند به زمان‌بندی نخ</h2></header>
+<div class="subsections"><details class="subsection" id="sub-7-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>با وجود نخ‌ها، واحدی که واقعاً نوبت اجرا می‌گیرد معمولاً نخ است. اما باید دو نوع انتخاب را از هم جدا کنیم.</p>
+<p>در مدل‌های Many-to-One و Many-to-Many، کتابخانهٔ نخ می‌تواند تصمیم بگیرد کدام نخ کاربر روی یک موجودیت اجرایی مثل <strong>LWP</strong> قرار بگیرد. رقابت درون یک فرایند است، پس آن را <strong>PCS، Process-Contention Scope</strong> می‌نامیم. اولویت تعیین‌شده توسط برنامه‌نویس می‌تواند در این انتخاب نقش داشته باشد.</p>
+<p>این انتخاب هنوز تضمین نمی‌کند CPU در اختیار نخ قرار گرفته؛ هسته هم باید موجودیت اجرایی زیرین را انتخاب کند.</p>
+<p>وقتی هسته از میان نخ‌های سیستم، یک نخ را برای CPU انتخاب می‌کند، رقابت <strong>SCS، System-Contention Scope</strong> است.</p>
+<table>
+<thead>
+<tr>
+<th>دامنه</th>
+<th>محدودهٔ رقابت</th>
+<th>تصمیم‌گیرنده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCS</td>
+<td>نخ‌های یک فرایند</td>
+<td>کتابخانهٔ نخ</td>
+</tr>
+<tr>
+<td>SCS</td>
+<td>نخ‌های هسته در کل سیستم</td>
+<td>سیستم‌عامل</td>
+</tr>
+</tbody>
+</table>
+<p>در Pthread، دو مقدار <code>PTHREAD_SCOPE_PROCESS</code> و <code>PTHREAD_SCOPE_SYSTEM</code> این انتخاب را بیان می‌کنند.</p>
+<p>در مدل Many-to-Many، حالت Process نخ‌های کاربر را روی LWPهای موجود زمان‌بندی می‌کند؛ حالت System برای نخ موجودیت اجرایی اختصاصی فراهم می‌کند و به مدل One-to-One نزدیک می‌شود. طبق اسلاید، Linux و Mac OS X فقط حالت System را می‌پذیرند.</p>
+</div>
+</details><details class="subsection" id="sub-7-2">
+<summary><span class="sub-index">02</span><span>زیربخش 2</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>کد اسلاید ابتدا ویژگی‌های پیش‌فرض را می‌سازد:</p>
+<pre><code class="language-c">pthread_attr_init(&amp;attr);
+</code></pre>
+<p>سپس دامنهٔ ثبت‌شده در آن را می‌خواند:</p>
+<pre><code class="language-c">pthread_attr_getscope(&amp;attr, &amp;scope);
+</code></pre>
+<p>بعد از بررسی خطا و چاپ مقدار، دامنه را System قرار می‌دهد:</p>
+<pre><code class="language-c">pthread_attr_setscope(&amp;attr, PTHREAD_SCOPE_SYSTEM);
+</code></pre>
+<p>پنج نخ با همین ویژگی‌ها ساخته می‌شوند:</p>
+<pre><code class="language-c">pthread_create(&amp;tid[i], &amp;attr, runner, NULL);
+</code></pre>
+<p>هر نخ از تابع <code>runner</code> شروع می‌کند. نخ اصلی با <code>pthread_join</code> منتظر پایان آن‌ها می‌ماند و <code>pthread_exit</code> اجرای هر نخ را خاتمه می‌دهد.</p>
+</div>
+</details></div></section><section class="chapter" data-title="وقتی چند CPU یا چند هسته داریم" id="section-8">
+<header class="chapter-header"><div class="chapter-meta">موضوع 08 <span class="meta-dot">·</span> 3 زیربخش</div><h2>وقتی چند CPU یا چند هسته داریم</h2></header>
+<div class="subsections"><details class="subsection" id="sub-8-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>در سیستم تک‌پردازنده‌ای می‌پرسیدیم «چه کاری اجرا شود؟». در سیستم چندپردازنده‌ای باید بپرسیم <strong>«روی کدام پردازنده اجرا شود؟»</strong></p>
+<p>پردازنده‌ها ممکن است <strong>همگن</strong> باشند؛ یعنی قابلیت‌های مشابه داشته باشند، مانند نمونه‌های Xeon، EPYC یا هسته‌های Cortex-A53 در Raspberry Pi 3.</p>
+<p>یا ممکن است <strong>ناهمگن</strong> باشند؛ یعنی از نظر عملکرد، مصرف انرژی یا معماری تفاوت داشته باشند. هسته‌های CPU ناهمگن معمولاً ISA یکسان یا سازگار، ولی ریزمعماری متفاوت دارند.</p>
+<table>
+<thead>
+<tr>
+<th>مثال</th>
+<th>ترکیب معرفی‌شده</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ARM big.LITTLE</td>
+<td>هسته‌های با عملکرد و مصرف متفاوت</td>
+</tr>
+<tr>
+<td>Apple M1/M2/M3/M4</td>
+<td>هسته‌های Performance و Efficiency</td>
+</tr>
+<tr>
+<td>Intel Hybrid</td>
+<td>هسته‌های P و E</td>
+</tr>
+<tr>
+<td>NVIDIA Jetson</td>
+<td>CPU مبتنی بر ARM همراه GPU</td>
+</tr>
+<tr>
+<td>Qualcomm Snapdragon</td>
+<td>انواع هستهٔ CPU همراه GPU و DSP</td>
+</tr>
+</tbody>
+</table>
+<p>علاوه بر نوع پردازنده، شیوهٔ مدیریت آن‌ها هم مهم است.</p>
+<p>در مدل سادهٔ <strong>AMP، چندپردازشی نامتقارن</strong>، یک پردازندهٔ اصلی سیستم را راه‌اندازی می‌کند، سیستم‌عامل اصلی و فعالیت‌های سیستمی را اجرا می‌کند، تصمیم زمان‌بندی و I/O را می‌گیرد و به پردازنده‌های دیگر کار می‌دهد.</p>
+</div>
+</details><details class="subsection" id="sub-8-2">
+<summary><span class="sub-index">02</span><span>زیربخش 2</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>چون مدیریت ساختارهای اصلی متمرکز است، اشتراک‌گذاری و همگام‌سازی ساده‌تر می‌شود.</p>
+<p>در کاربردهای نهفته و بلادرنگ، AMP می‌تواند برای جداسازی محیط‌های اجرایی، کنترل تداخل و محدودکردن گسترش خطا استفاده شود. اسلاید Zynq UltraScale و NXP i.MX را مثال می‌زند.</p>
+<p>در <strong>SMP، چندپردازشی متقارن</strong>، پردازنده‌ها هم‌رتبه‌اند و یک هستهٔ سیستم‌عامل کل سیستم را مدیریت می‌کند. چند هسته می‌توانند هم‌زمان کد هسته را اجرا کنند؛ بنابراین داده‌های مشترک باید محافظت شوند.</p>
+<p>هر پردازنده می‌تواند کار بعدی خود را انتخاب کند. صف آماده ممکن است مشترک باشد یا هر پردازنده صف جداگانه داشته باشد. این مدل هم هم‌روندی و هم اجرای موازی را پشتیبانی می‌کند.</p>
+<p>مسائل مهم SMP عبارت‌اند از:</p>
+<ul>
+<li>Race Condition در دسترسی به دادهٔ مشترک.</li>
+<li>رقابت برای قفل‌ها.</li>
+<li>سازگاری نسخه‌های داده در کش‌ها.</li>
+<li>قواعد ترتیب مشاهدهٔ عملیات حافظه.</li>
+<li>توازن بار.</li>
+<li>مدیریت وقفه‌ها.</li>
+<li>اثر NUMA بر دسترسی حافظه.</li>
+</ul>
+<p>Windows XP/2000، Solaris، Linux، Mac OS X و FreeBSD نمونه‌های اسلاید برای پشتیبانی SMP هستند.</p>
+</div>
+</details><details class="subsection" id="sub-8-3">
+<summary><span class="sub-index">03</span><span>زیربخش 3</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>مقایسهٔ دو مدل:</p>
+<table>
+<thead>
+<tr>
+<th>ویژگی</th>
+<th>SMP</th>
+<th>AMP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>نقش CPUها</td>
+<td>هم‌رتبه</td>
+<td>نقش‌ها یا محیط‌های متفاوت</td>
+</tr>
+<tr>
+<td>سیستم‌عامل</td>
+<td>معمولاً یک نمونه</td>
+<td>اغلب چند نمونه</td>
+</tr>
+<tr>
+<td>دامنهٔ زمان‌بندی</td>
+<td>مشترک</td>
+<td>اغلب جدا</td>
+</tr>
+<tr>
+<td>توزیع کار</td>
+<td>معمولاً پویا</td>
+<td>اغلب از پیش تقسیم‌شده</td>
+</tr>
+<tr>
+<td>داده‌های هسته</td>
+<td>مشترک و همگام‌شده</td>
+<td>وابسته به طراحی</td>
+</tr>
+<tr>
+<td>کاربرد معمول</td>
+<td>سرور، رایانه، تلفن هوشمند</td>
+<td>نهفته و بلادرنگ</td>
+</tr>
+</tbody>
+</table>
+<p>تعریف AMP در این جدول، گسترده‌تر از مدل سادهٔ یک پردازندهٔ اصلی است.</p>
+</div>
+</details></div></section><section class="chapter" data-title="تعادل میان ماندن و جابه‌جاشدن" id="section-9">
+<header class="chapter-header"><div class="chapter-meta">موضوع 09 <span class="meta-dot">·</span> 1 زیربخش</div><h2>تعادل میان ماندن و جابه‌جاشدن</h2></header>
+<div class="subsections"><details class="subsection" id="sub-9-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>اگر فرایندی روی یک CPU اجرا شده باشد، احتمال دارد داده‌ها و دستورهایش در کش همان CPU باشند. بنابراین ادامهٔ اجرا روی همان پردازنده معمولاً سود دارد. این تمایل را <strong>Processor Affinity</strong> می‌نامیم.</p>
+<p>مهاجرت می‌تواند محلی‌بودن کش را از بین ببرد و به پرشدن کش مقصد نیاز داشته باشد.</p>
+<p>در <strong>Soft Affinity</strong>، سیستم تلاش می‌کند محل اجرا را حفظ کند؛ در <strong>Hard Affinity</strong>، اجرای کار به مجموعه‌ای مشخص از CPUها محدود می‌شود. اسلاید ابزار <code>taskset</code> در Linux و Processor Set در Solaris را مثال می‌زند:</p>
+<pre><code class="language-bash">taskset -p PID
+</code></pre>
+<p>این دستور Affinity فرایند را نشان می‌دهد.</p>
+<p>در <strong>NUMA</strong>، موضوع فقط کش نیست. هر CPU به حافظهٔ محلی خود سریع‌تر و به حافظهٔ بخش دیگر کندتر دسترسی دارد. پس زمان‌بند و الگوریتم جای‌گذاری حافظه باید محل داده و محل اجرا را با هم در نظر بگیرند.</p>
+<p>از طرف دیگر، نمی‌خواهیم یک CPU شلوغ و CPU دیگر بیکار بماند. <strong>Load Balancing</strong> بار را توزیع می‌کند:</p>
+<ul>
+<li>در <strong>Push Migration</strong>، یک فعالیت دوره‌ای کار را از CPU شلوغ به دیگری منتقل می‌کند.</li>
+<li>در <strong>Pull Migration</strong>، CPU بیکار از CPU شلوغ کار می‌گیرد.</li>
+</ul>
+<p>اینجا تعارض روشن است: جابه‌جایی به توازن بار کمک می‌کند، ولی ممکن است مزیت Affinity و حافظهٔ محلی را کاهش دهد.</p>
+</div>
+</details></div></section><section class="chapter" data-title="هستهٔ فیزیکی، نخ سخت‌افزاری و سه سطح زمان‌بندی" id="section-10">
+<header class="chapter-header"><div class="chapter-meta">موضوع 10 <span class="meta-dot">·</span> 2 زیربخش</div><h2>هستهٔ فیزیکی، نخ سخت‌افزاری و سه سطح زمان‌بندی</h2></header>
+<div class="subsections"><details class="subsection" id="sub-10-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>قرارگرفتن چند هسته روی یک تراشه، امکان اجرای موازی بیشتری می‌دهد. اما حتی یک هسته هم همیشه مشغول محاسبه نیست؛ گاهی منتظر حافظه می‌ماند. این توقف <strong>Memory Stall</strong> است.</p>
+<p>با چند نخ سخت‌افزاری در هر هسته، سخت‌افزار می‌تواند هنگام انتظار یک نخ، از نخ دیگر دستور اجرا کند. مثال اسلاید، UltraSPARC T1 است:</p>
+<div class="math-display" dir="ltr"><div class="mixed-formula" dir="ltr"><span>8</span><span dir="rtl">هسته</span><span>×</span><span>4</span><span dir="rtl">نخ در هر هسته</span><span>=</span><span>32</span><span dir="rtl">CPU منطقی</span></div></div>
+<p>هر نخ سخت‌افزاری وضعیت مستقل، مانند PC و ثبات‌ها، دارد؛ ولی واحدهای اجرا، کش‌ها، پیش‌بینی‌کنندهٔ انشعاب و TLB می‌توانند مشترک باشند. بنابراین دو نخ سخت‌افزاری، دو هستهٔ فیزیکی مستقل نیستند.</p>
+<p>در شکل‌های فصل، <code>C</code> محاسبه و <code>M</code> انتظار حافظه است. با اجرای دو نخ، بخشی از انتظار یکی با محاسبهٔ دیگری پوشانده می‌شود. استفاده از این توقف‌های کوتاه به پشتیبانی سخت‌افزار نیاز دارد؛ تعویض نخ توسط سیستم‌عامل در چنین مقیاسی انجام نمی‌شود.</p>
+<p>حالا سه سطح زمان‌بندی را می‌توان کنار هم دید:</p>
+<table>
+<thead>
+<tr>
+<th>سطح</th>
+<th>نگاشت</th>
+<th>مسئول</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L2</td>
+<td>نخ کاربر → نخ هسته یا LWP</td>
+<td>کتابخانهٔ نخ یا برنامه‌نویس</td>
+</tr>
+<tr>
+<td>L1</td>
+<td>نخ هسته → نخ سخت‌افزاری، یعنی CPU منطقی</td>
+<td>سیستم‌عامل</td>
+</tr>
+<tr>
+<td>L0</td>
+<td>نخ سخت‌افزاری → منابع اجرای هسته</td>
+<td>سخت‌افزار</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><details class="subsection" id="sub-10-2">
+<summary><span class="sub-index">02</span><span>زیربخش 2</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>در مدل One-to-One، مرحلهٔ جداگانهٔ L2 وجود ندارد.</p>
+<p>شکل سلسله‌مراتب، دو پردازنده، چهار هسته، هشت نخ سخت‌افزاری، شانزده نخ هسته و تعداد بیشتری نخ کاربر را نشان می‌دهد. هر لایه کارهای لایهٔ پایین‌تر را روی ظرفیت لایهٔ بالاتر نگاشت می‌کند.</p>
+<p>جدول نمونه‌های اسلاید:</p>
+<table>
+<thead>
+<tr>
+<th>خانواده</th>
+<th style="text-align:right">هستهٔ فیزیکی نمونه</th>
+<th style="text-align:right">نخ در هر هسته</th>
+<th style="text-align:right">کل نخ سخت‌افزاری</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intel Core Ultra 200S</td>
+<td style="text-align:right">۲۴</td>
+<td style="text-align:right">۱</td>
+<td style="text-align:right">۲۴</td>
+</tr>
+<tr>
+<td>Intel Xeon 6 P-core</td>
+<td style="text-align:right">۱۲۸</td>
+<td style="text-align:right">۲</td>
+<td style="text-align:right">۲۵۶</td>
+</tr>
+<tr>
+<td>AMD Ryzen 9000</td>
+<td style="text-align:right">۱۶</td>
+<td style="text-align:right">۲</td>
+<td style="text-align:right">۳۲</td>
+</tr>
+<tr>
+<td>AMD EPYC 9005</td>
+<td style="text-align:right">۱۹۲</td>
+<td style="text-align:right">۲</td>
+<td style="text-align:right">۳۸۴</td>
+</tr>
+<tr>
+<td>IBM POWER7</td>
+<td style="text-align:right">۸</td>
+<td style="text-align:right">۴</td>
+<td style="text-align:right">۳۲</td>
+</tr>
+<tr>
+<td>IBM POWER8</td>
+<td style="text-align:right">۱۲</td>
+<td style="text-align:right">۸</td>
+<td style="text-align:right">۹۶</td>
+</tr>
+<tr>
+<td>IBM POWER9</td>
+<td style="text-align:right">۱۲</td>
+<td style="text-align:right">۸</td>
+<td style="text-align:right">۹۶</td>
+</tr>
+<tr>
+<td>IBM Power10</td>
+<td style="text-align:right">۱۵</td>
+<td style="text-align:right">۸</td>
+<td style="text-align:right">۱۲۰</td>
+</tr>
+</tbody>
+</table>
+<p>اینکه یک، دو، چهار یا هشت نخ در هر هسته بهتر باشد، به معماری و بار کاری بستگی دارد؛ نخ بیشتر فرصت بهره‌برداری ایجاد می‌کند، اما رقابت منابع را هم افزایش می‌دهد.</p>
+<p>شکل Hyper-Threading سه روش استفاده از نخ‌ها را مقایسه می‌کند:</p>
+<ul>
+<li><strong>Coarse-grained:</strong> تعویض نخ در بازه‌های درشت‌تر، معمولاً هنگام توقف مهم.</li>
+<li><strong>Fine-grained:</strong> تغییر نخ در تناوب ریز، مثلاً هر چرخه.</li>
+<li><strong>SMT:</strong> استفاده از دستورهای چند نخ در یک چرخه برای پرکردن ظرفیت اجرا.</li>
+</ul>
+<p>Hyper-Threading فناوری Intel برای این ایده است. هدف شکل SMT، نشان‌دادن کاهش ظرفیت خالی واحدهای اجراست.</p>
+</div>
+</details></div></section><section class="chapter" data-title="وقتی پایان‌یافتن تا موعد، جزئی از درستی است" id="section-11">
+<header class="chapter-header"><div class="chapter-meta">موضوع 11 <span class="meta-dot">·</span> 3 زیربخش</div><h2>وقتی پایان‌یافتن تا موعد، جزئی از درستی است</h2></header>
+<div class="subsections"><details class="subsection" id="sub-11-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>تا اینجا معیارهایی مثل انتظار و پاسخ را بهینه می‌کردیم. در سیستم <strong>بلادرنگ</strong>، محدودیت صریح زمانی داریم: نتیجه باید هم درست باشد و هم تا Deadline آماده شود.</p>
+<p>در <strong>Soft Real-Time</strong>، کار حساس ترجیح می‌گیرد، اما تضمین سختی برای رعایت موعد وجود ندارد. در <strong>Hard Real-Time</strong>، رعایت Deadline الزام است.</p>
+<p>اسلاید برای نشان‌دادن سادگی RTOSهای کوچک، اندازهٔ Windows XP را بیش از ۴۰ میلیون خط و یک RTOS ساده را حدود ۱۰ تا ۱۰۰ هزار خط کد معرفی می‌کند.</p>
+<p>چنین RTOSهایی معمولاً تک‌منظوره‌اند و ممکن است تنوع دستگاه‌ها، چندکاربری یا امکانات گستردهٔ حفاظتی و امنیتی سیستم‌های عمومی را نداشته باشند. امکانات بیشتر، حافظه، پردازش و هزینهٔ بیشتری می‌خواهد. این توصیف مربوط به RTOSهای سادهٔ مدنظر اسلاید است، نه تمام محصولات بلادرنگ.</p>
+<p>سه ویژگی اصلی مطرح‌شده برای اجرای بلادرنگ عبارت‌اند از:</p>
+<ol>
+<li>زمان‌بندی پیش‌دستانهٔ مبتنی بر اولویت.</li>
+<li>هستهٔ پیش‌دستانه.</li>
+<li>کاهش تأخیرها.</li>
+</ol>
+<p>نمونه‌ها و تاریخ‌های ثبت‌شده در فایل:</p>
+<table>
+<thead>
+<tr>
+<th>سیستم</th>
+<th style="text-align:right">آغاز</th>
+<th>آخرین انتشارِ درج‌شده در اسلاید</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VxWorks</td>
+<td style="text-align:right">۱۹۸۷</td>
+<td>فوریهٔ ۲۰۲۴</td>
+</tr>
+<tr>
+<td>QNX</td>
+<td style="text-align:right">۱۹۸۲</td>
+<td>دسامبر ۲۰۲۳</td>
+</tr>
+<tr>
+<td>FreeRTOS</td>
+<td style="text-align:right">۲۰۰۳</td>
+<td>آوریل ۲۰۲۴</td>
+</tr>
+<tr>
+<td>LynxOS</td>
+<td style="text-align:right">۱۹۸۶</td>
+<td>فوریهٔ ۲۰۲۰</td>
+</tr>
+<tr>
+<td>Windows CE</td>
+<td style="text-align:right">۱۹۹۶</td>
+<td>۲۰۱۳</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><details class="subsection" id="sub-11-2">
+<summary><span class="sub-index">02</span><span>زیربخش 2</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>این‌ها تاریخ‌های خود فایل‌اند، نه گزارش وضعیت فعلی محصولات.</p>
+<p>اسلاید تنوع معماری‌های آن‌ها را هم نشان می‌دهد:</p>
+<ul>
+<li><strong>VxWorks، انحصاری:</strong> x86، x86-64، MIPS، PowerPC، SH-4، ARM و RISC-V.</li>
+<li><strong>QNX، انحصاری:</strong> x86-64، ARM32 و ARM64؛ معماری‌های قبلی MIPS، PowerPC، SH-4، StrongARM و XScale.</li>
+<li><strong>FreeRTOS، متن‌باز:</strong> ARM، AVR، AVR32، HCS12، MicroBlaze، Cortus، MSP430، PIC، H8/S، SuperH، RX، x86، 8052، ColdFire، V850، 78K0R، Fujitsu MB91460 و MB96340، Nios II، TMS570، RM4x، ESP32 و RISC-V.</li>
+<li><strong>LynxOS، بسته:</strong> Motorola 68010، Intel 80386، ARM و PowerPC.</li>
+<li><strong>Windows CE، بسته:</strong> x86، MIPS، ARM و SuperH.</li>
+</ul>
+<p>داشتن اولویت و پیش‌دستی، اجازه می‌دهد کار مهم‌تر به‌محض آماده‌شدن، کار جاری را قطع کند؛ اسلاید ۳۲ سطح اولویت Windows XP را مثال می‌زند. اما این ویژگی به‌تنهایی Deadline را تضمین نمی‌کند، چون ممکن است کار مهم هنوز منتظر منبع یا اجرای بخش غیرقابل‌قطع بماند.</p>
+<p>در هستهٔ پیش‌دستانه، اجرای کد هسته هم در نقاط مجاز می‌تواند قطع شود. طراحی آن سخت‌تر است، چون ساختارهای هسته باید در برابر دسترسی هم‌زمان محافظت شوند. اسلاید RTLinux را مثال می‌زند.</p>
+</div>
+</details><details class="subsection" id="sub-11-3">
+<summary><span class="sub-index">03</span><span>زیربخش 3</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>عبارت اسلاید دربارهٔ غیرپیش‌دستانه‌بودن Windows XP دقیق نیست؛ اجرای نخ در حالت هسته هم تحت شرایط مجاز می‌تواند پیش‌دستی شود. سطح وقفه و بخش‌های حساس محدودیت ایجاد می‌کنند. <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/always-preemptible-and-always-interruptible?utm_source=chatgpt.com">learn.microsoft.com</a></p>
+<p>نیاز زمانی هم به کاربرد وابسته است. مثال‌های فایل برای ترمز ضدقفل حدود ۳ تا ۵ میلی‌ثانیه و برای کنترل‌کنندهٔ رادار هوایی حدود ۱ تا ۱۰ ثانیه هستند.</p>
+</div>
+</details></div></section><section class="chapter" data-title="دو تأخیر مهم در پاسخ بلادرنگ" id="section-12">
+<header class="chapter-header"><div class="chapter-meta">موضوع 12 <span class="meta-dot">·</span> 1 زیربخش</div><h2>دو تأخیر مهم در پاسخ بلادرنگ</h2></header>
+<div class="subsections"><details class="subsection" id="sub-12-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>اول، <strong>Interrupt Latency</strong> است: فاصلهٔ رسیدن وقفه تا آغاز روال سرویس آن.</p>
+<p>این فاصله می‌تواند شامل تکمیل دستور جاری، تشخیص وقفه، ذخیرهٔ وضعیت و مدتی باشد که وقفه‌ها غیرفعال‌اند. مثلاً هسته ممکن است هنگام تغییر داده‌های حساس، وقفه را موقتاً غیرفعال کند.</p>
+<p>دوم، <strong>Dispatch Latency</strong> است: فاصلهٔ کنارگذاشتن کار جاری تا آغاز کار انتخاب‌شده.</p>
+<p>دو مانع مهم آن:</p>
+<ul>
+<li>اجرای بخشی از هسته که فعلاً قابل‌پیش‌دستی نیست.</li>
+<li>دراختیاربودن منبع موردنیاز کار پراولویت، توسط کار کم‌اولویت.</li>
+</ul>
+<p>مثال تاریخی Solaris در اسلاید، تأخیر بیش از ۱۰۰ میلی‌ثانیه بدون پیش‌دستی و کمتر از ۱ میلی‌ثانیه با فعال‌بودن آن است.</p>
+<p>پس برای Hard Real-Time باید علاوه بر ترجیح کار مهم، <strong>امکان رعایت موعد آن</strong> هم بررسی شود.</p>
+</div>
+</details></div></section><section class="chapter" data-title="کارهای دوره‌ای و انتخاب اولویت" id="section-13">
+<header class="chapter-header"><div class="chapter-meta">موضوع 13 <span class="meta-dot">·</span> 2 زیربخش</div><h2>کارهای دوره‌ای و انتخاب اولویت</h2></header>
+<div class="subsections"><details class="subsection" id="sub-13-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>کار دوره‌ای در فاصله‌های ثابت دوباره به اجرا نیاز دارد. سه پارامتر آن:</p>
+<ul>
+<li><span class="math-inline" dir="ltr">\(t\)</span>: زمان پردازش هر نوبت.</li>
+<li><span class="math-inline" dir="ltr">\(d\)</span>: Deadline نسبی.</li>
+<li><span class="math-inline" dir="ltr">\(p\)</span>: دوره.</li>
+</ul>
+<p>در مدل فصل:</p>
+<div class="math-display" dir="ltr">\[
+0\leq t\leq d\leq p
+\]</div>
+<p>و نرخ تولید نوبت‌های کار:</p>
+<div class="math-display" dir="ltr">\[
+Rate=\frac1p
+\]</div>
+<p>سیستم با <strong>Admission Control</strong> تصمیم می‌گیرد کار جدید را بپذیرد یا رد کند؛ براساس اینکه بتواند نیازهای زمانی را تأمین کند.</p>
+<p>در <strong>Rate Monotonic Scheduling یا RMS</strong>، کار با دورهٔ کوتاه‌تر اولویت بالاتری دارد. این اولویت ثابت است.</p>
+<p>مثال اول:</p>
+<div class="math-display" dir="ltr">\[
+p_1=50,\quad t_1=20
+\]</div>
+<div class="math-display" dir="ltr">\[
+p_2=100,\quad t_2=35
+\]</div>
+<p><span class="math-inline" dir="ltr">\(P_1\)</span> اولویت بالاتر دارد:</p>
+<table>
+<thead>
+<tr>
+<th>بازه</th>
+<th>اجرا</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>۰ تا ۲۰</td>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+<tr>
+<td>۲۰ تا ۵۰</td>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+</tr>
+<tr>
+<td>۵۰ تا ۷۰</td>
+<td>نوبت بعدی <span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+<tr>
+<td>۷۰ تا ۷۵</td>
+<td>باقی‌ماندهٔ <span class="math-inline" dir="ltr">\(P_2\)</span></td>
+</tr>
+<tr>
+<td>۷۵ تا ۱۰۰</td>
+<td>بیکاری</td>
+</tr>
+</tbody>
+</table>
+<p>هر دو تا موعد خود تمام می‌شوند.</p>
+<p>اما با این داده‌ها:</p>
+<div class="math-display" dir="ltr">\[
+p_1=50,\quad t_1=25
+\]</div>
+<div class="math-display" dir="ltr">\[
+p_2=80,\quad t_2=35
+\]</div>
+<p>همچنان <span class="math-inline" dir="ltr">\(P_1\)</span> اولویت بالاتری دارد. از ۰ تا ۲۵ اجرا می‌شود؛ <span class="math-inline" dir="ltr">\(P_2\)</span> از ۲۵ تا ۵۰، ۲۵ واحد می‌گیرد؛ سپس نوبت جدید <span class="math-inline" dir="ltr">\(P_1\)</span> از ۵۰ تا ۷۵ اجرا می‌شود. تا زمان ۸۰، <span class="math-inline" dir="ltr">\(P_2\)</span> فقط پنج واحد دیگر می‌گیرد.</p>
+</div>
+</details><details class="subsection" id="sub-13-2">
+<summary><span class="sub-index">02</span><span>زیربخش 2</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>پس تا Deadline برابر ۸۰، فقط ۳۰ واحد از ۳۵ واحد موردنیازش اجرا شده و موعد را از دست می‌دهد.</p>
+<p>در <strong>EDF، Earliest Deadline First</strong>، اولویت براساس نزدیک‌ترین Deadline تعیین می‌شود؛ بنابراین پویاست.</p>
+<p>برای همین مثال:</p>
+<table>
+<thead>
+<tr>
+<th>بازه</th>
+<th>اجرا</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>۰ تا ۲۵</td>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+<tr>
+<td>۲۵ تا ۶۰</td>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+</tr>
+<tr>
+<td>۶۰ تا ۸۵</td>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+<tr>
+<td>۸۵ تا ۱۰۰</td>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+</tr>
+<tr>
+<td>۱۰۰ تا ۱۲۵</td>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+<tr>
+<td>۱۲۵ تا ۱۴۵</td>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>تفاوت اصلی در زمان ۵۰ است: نوبت جدید <span class="math-inline" dir="ltr">\(P_1\)</span> Deadline برابر ۱۰۰ دارد، ولی موعد کار جاری <span class="math-inline" dir="ltr">\(P_2\)</span>، زمان ۸۰ است. بنابراین <span class="math-inline" dir="ltr">\(P_2\)</span> قطع نمی‌شود و تا ۶۰ تمام می‌شود.</p>
+<p>این مثال نشان می‌دهد اولویت ثابتِ مبتنی بر دوره و اولویت پویای مبتنی بر موعد، می‌توانند نتیجهٔ متفاوتی داشته باشند.</p>
+</div>
+</details></div></section><section class="chapter" data-title="سیاست‌های بلادرنگ در POSIX" id="section-14">
+<header class="chapter-header"><div class="chapter-meta">موضوع 14 <span class="meta-dot">·</span> 1 زیربخش</div><h2>سیاست‌های بلادرنگ در POSIX</h2></header>
+<div class="subsections"><details class="subsection" id="sub-14-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>استاندارد POSIX.1b رابط‌هایی برای مدیریت نخ‌های بلادرنگ معرفی می‌کند.</p>
+<p>دو سیاست اصلی این بخش:</p>
+<ul>
+<li><strong><code>SCHED_FIFO</code>:</strong> میان نخ‌های هم‌اولویت، ترتیب FIFO برقرار است و تقسیم زمانی خودکار نداریم.</li>
+<li><strong><code>SCHED_RR</code>:</strong> مشابه FIFO است، ولی نخ‌های هم‌اولویت با Quantum نوبتی اجرا می‌شوند.</li>
+</ul>
+<p>در هر دو، نخ با اولویت بالاتر می‌تواند پیش‌دستی کند؛ FIFO بودن، اولویت را حذف نمی‌کند.</p>
+<p>توابع خواندن و تنظیم سیاست:</p>
+<pre><code class="language-c">pthread_attr_getschedpolicy(&amp;attr, &amp;policy);
+pthread_attr_setschedpolicy(&amp;attr, policy);
+</code></pre>
+<p>این‌ها <strong>سیاست</strong> را تعیین می‌کنند؛ <code>getscope</code> و <code>setscope</code> قبلی، <strong>دامنهٔ رقابت</strong> را تعیین می‌کردند.</p>
+<p>کد اسلاید ویژگی‌های پیش‌فرض را می‌سازد، سیاست موجود را می‌خواند و یکی از <code>SCHED_OTHER</code>، <code>SCHED_RR</code> یا <code>SCHED_FIFO</code> را چاپ می‌کند. سپس سیاست ثبت‌شده در <code>attr</code> را FIFO قرار می‌دهد، پنج نخ می‌سازد و منتظر پایان آن‌ها می‌ماند.</p>
+<p>هدف این کد نمایش API است؛ تمام جزئیات یک برنامهٔ اجرایی کامل بلادرنگ را پوشش نمی‌دهد.</p>
+</div>
+</details></div></section><section class="chapter" data-title="این ایده‌ها در Linux چگونه استفاده شده‌اند؟" id="section-15">
+<header class="chapter-header"><div class="chapter-meta">موضوع 15 <span class="meta-dot">·</span> 3 زیربخش</div><h2>این ایده‌ها در Linux چگونه استفاده شده‌اند؟</h2></header>
+<div class="subsections"><details class="subsection" id="sub-15-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>بخش سیستم‌عامل‌ها دربارهٔ طراحی‌های تاریخیِ نسخه‌های ذکرشده در اسلاید است.</p>
+<p>Linux پیش از نسخهٔ ۲٫۵ از گونه‌ای از زمان‌بندی سنتی UNIX استفاده می‌کرد. سپس زمان‌بند <strong><span class="math-inline" dir="ltr">\(O(1)\)</span></strong> مطرح شد؛ یعنی هزینهٔ انتخاب کار با تعداد کارها رشد خطی نداشت.</p>
+<p>این طراحی پیش‌دستانه و اولویتی بود، کارهای عادی و بلادرنگ را جدا می‌کرد و در آن اولویت بالاتر، سهم زمانی بیشتری می‌گرفت.</p>
+<p>هر CPU صف اجرای خودش را داشت و کارها در دو آرایهٔ اولویت قرار می‌گرفتند:</p>
+<ul>
+<li><strong>Active:</strong> هنوز از سهم زمانی دور جاری باقی مانده است.</li>
+<li><strong>Expired:</strong> سهم این دور تمام شده است.</li>
+</ul>
+<p>وقتی Active خالی می‌شد، دو آرایه جابه‌جا می‌شدند. Expired بودن به معنی انتظار برای I/O نبود؛ یعنی کار فعلاً سهم این دور را مصرف کرده است.</p>
+<p>طبق اسلاید، این طراحی با وجود کارایی، برای پاسخ بعضی کارهای تعاملی مناسب نبود.</p>
+<p>از نسخهٔ ۲٫۶٫۲۳، <strong>CFS، Completely Fair Scheduler</strong> معرفی شد. ایدهٔ آن تقسیم منصفانهٔ سهم CPU میان کارهاست.</p>
+<p>کلاس‌های زمان‌بندی اولویت دارند و انتخاب از بالاترین کلاس دارای کار آماده انجام می‌شود. در مدل معرفی‌شده، کلاس عادی و بلادرنگ وجود دارد و امکان افزودن کلاس هم مطرح است.</p>
+</div>
+</details><details class="subsection" id="sub-15-2">
+<summary><span class="sub-index">02</span><span>زیربخش 2</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>در کارهای عادی، مقدار nice در این بازه است:</p>
+<div class="math-display" dir="ltr">\[
+-20\leq nice\leq19
+\]</div>
+<p>عدد کوچک‌تر یعنی اولویت و سهم بیشتر.</p>
+<p><strong>Target Latency</strong> بازهٔ هدفی است که انتظار داریم کارهای آماده در آن حداقل یک بار فرصت اجرا بگیرند. با افزایش تعداد کارها، این بازه می‌تواند بزرگ‌تر شود.</p>
+<p>برای مقایسهٔ سهم مصرف‌شده، CFS مقدار <strong><code>vruntime</code></strong> را نگه می‌دارد؛ زمان اجرایی که با وزن اولویت محاسبه شده است:</p>
+<ul>
+<li>برای کار عادی، تقریباً مثل زمان واقعی پیش می‌رود.</li>
+<li>برای کار کم‌اولویت، سریع‌تر افزایش می‌یابد.</li>
+<li>برای کار پراولویت، کندتر افزایش می‌یابد.</li>
+</ul>
+<p>بنابراین کار پراولویت می‌تواند زمان واقعی بیشتری بگیرد، پیش از آنکه از نظر مجازی به دیگران برسد.</p>
+<p>کارهای آماده در یک <strong>درخت قرمزـسیاه</strong> براساس <code>vruntime</code> نگهداری می‌شوند. کار با کمترین مقدار در سمت چپ قرار می‌گیرد و نامزد اجرای بعدی است.</p>
+<p>کار آماده وارد درخت می‌شود و کار مسدودشده، مثلاً برای I/O، از مجموعهٔ آماده خارج می‌شود. درج و حذف مرتبهٔ <span class="math-inline" dir="ltr">\(O(\log N)\)</span> دارند. اشاره‌گر چپ‌ترین گره هم نگهداری می‌شود تا نامزد بعدی سریع پیدا شود.</p>
+</div>
+</details><details class="subsection" id="sub-15-3">
+<summary><span class="sub-index">03</span><span>زیربخش 3</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>کارهای بلادرنگ از اولویت‌های ثابت استفاده می‌کنند و در طرح اولویت کلی، بالاتر از کارهای عادی قرار می‌گیرند. در نمایش داخلی اسلاید:</p>
+<div class="math-display" dir="ltr">\[
+nice=-20 \Rightarrow priority=100
+\]</div>
+<div class="math-display" dir="ltr">\[
+nice=19 \Rightarrow priority=139
+\]</div>
+<p>پس مقادیر ۱۰۰ تا ۱۳۹، <strong>اولویت داخلی</strong> هستند، نه خود مقدار nice؛ در این نمایش عدد کوچک‌تر اولویت بالاتری دارد.</p>
+</div>
+</details></div></section><section class="chapter" data-title="زمان‌بندی در Windows" id="section-16">
+<header class="chapter-header"><div class="chapter-meta">موضوع 16 <span class="meta-dot">·</span> 2 زیربخش</div><h2>زمان‌بندی در Windows</h2></header>
+<div class="subsections"><details class="subsection" id="sub-16-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>Windows زمان‌بندی پیش‌دستانهٔ مبتنی بر اولویت دارد و نخ آماده با بالاترین اولویت را انتخاب می‌کند.</p>
+<p>نخ تا زمانی اجرا می‌شود که مسدود شود، سهمش تمام شود یا نخ پراولویت‌تری آماده شود.</p>
+<p>محدوده‌ها:</p>
+<table>
+<thead>
+<tr>
+<th>اولویت</th>
+<th>نقش</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>۰</td>
+<td>نخ ویژهٔ مدیریت حافظه در توضیح اسلاید</td>
+</tr>
+<tr>
+<td>۱ تا ۱۵</td>
+<td>اولویت‌های متغیر</td>
+</tr>
+<tr>
+<td>۱۶ تا ۳۱</td>
+<td>Real-Time</td>
+</tr>
+</tbody>
+</table>
+<p>برای هر سطح صف وجود دارد؛ در نبود نخ آماده، Idle Thread اجرا می‌شود. Dispatcher در اصطلاح این بخش تصمیم زمان‌بندی را هم انجام می‌دهد.</p>
+<p>اولویت پایهٔ نخ از دو عامل به دست می‌آید: <strong>کلاس فرایند</strong> و <strong>اولویت نسبی نخ</strong>.</p>
+<p>کلاس‌های فرایند عبارت‌اند از Real-time، High، Above normal، Normal، Below normal و Idle. اولویت‌های نسبی نخ هم Time-critical، Highest، Above normal، Normal، Below normal، Lowest و Idle هستند.</p>
+<p>ترکیب آن‌ها در جدول اسلاید:</p>
+<table>
+<thead>
+<tr>
+<th>اولویت نخ</th>
+<th style="text-align:right">Real-time</th>
+<th style="text-align:right">High</th>
+<th style="text-align:right">Above normal</th>
+<th style="text-align:right">Normal</th>
+<th style="text-align:right">Below normal</th>
+<th style="text-align:right">Idle class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time-critical</td>
+<td style="text-align:right">۳۱</td>
+<td style="text-align:right">۱۵</td>
+<td style="text-align:right">۱۵</td>
+<td style="text-align:right">۱۵</td>
+<td style="text-align:right">۱۵</td>
+<td style="text-align:right">۱۵</td>
+</tr>
+<tr>
+<td>Highest</td>
+<td style="text-align:right">۲۶</td>
+<td style="text-align:right">۱۵</td>
+<td style="text-align:right">۱۲</td>
+<td style="text-align:right">۱۰</td>
+<td style="text-align:right">۸</td>
+<td style="text-align:right">۶</td>
+</tr>
+<tr>
+<td>Above normal</td>
+<td style="text-align:right">۲۵</td>
+<td style="text-align:right">۱۴</td>
+<td style="text-align:right">۱۱</td>
+<td style="text-align:right">۹</td>
+<td style="text-align:right">۷</td>
+<td style="text-align:right">۵</td>
+</tr>
+<tr>
+<td>Normal</td>
+<td style="text-align:right">۲۴</td>
+<td style="text-align:right">۱۳</td>
+<td style="text-align:right">۱۰</td>
+<td style="text-align:right">۸</td>
+<td style="text-align:right">۶</td>
+<td style="text-align:right">۴</td>
+</tr>
+<tr>
+<td>Below normal</td>
+<td style="text-align:right">۲۳</td>
+<td style="text-align:right">۱۲</td>
+<td style="text-align:right">۹</td>
+<td style="text-align:right">۷</td>
+<td style="text-align:right">۵</td>
+<td style="text-align:right">۳</td>
+</tr>
+<tr>
+<td>Lowest</td>
+<td style="text-align:right">۲۲</td>
+<td style="text-align:right">۱۱</td>
+<td style="text-align:right">۸</td>
+<td style="text-align:right">۶</td>
+<td style="text-align:right">۴</td>
+<td style="text-align:right">۲</td>
+</tr>
+<tr>
+<td>Idle</td>
+<td style="text-align:right">۱۶</td>
+<td style="text-align:right">۱</td>
+<td style="text-align:right">۱</td>
+<td style="text-align:right">۱</td>
+<td style="text-align:right">۱</td>
+<td style="text-align:right">۱</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><details class="subsection" id="sub-16-2">
+<summary><span class="sub-index">02</span><span>زیربخش 2</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>مثلاً نخ Normal در فرایند Normal، اولویت ۸ دارد.</p>
+<p>در محدودهٔ متغیر، خروج از انتظار می‌تواند باعث تقویت موقت اولویت شود. این افزایش پس از مصرف سهم زمانی کاهش می‌یابد، اما از اولویت پایه پایین‌تر نمی‌رود.</p>
+<p>عبارت اسلاید دربارهٔ «سه‌برابرشدن اولویت Foreground» دقیق نیست؛ سه‌برابرشدن در توضیح تاریخی این طراحی، عمدتاً مربوط به <strong>Quantum فرایند Foreground</strong> است و افزایش اولویت سازوکار جداگانه‌ای دارد. <a href="https://download.microsoft.com/download/1/4/0/14045a9e-c978-47d1-954b-92b9fd877995/97807356648739_samplechapters.pdf?utm_source=chatgpt.com">download.microsoft.com</a></p>
+<p>Windows 7 همچنین <strong>UMS، User-Mode Scheduling</strong> را معرفی کرد تا برنامه‌ها مدیریت زمان‌بندی نخ‌ها را در سطح کاربر انجام دهند. اسلاید این روش را برای تعداد زیاد نخ کارآمدتر معرفی می‌کند و C++ ConcRT را مثال می‌زند.</p>
+<p>در Windows، <strong>عدد بزرگ‌تر یعنی اولویت بالاتر</strong>؛ قرارداد عددی را با مثال ابتدای فصل اشتباه نکن.</p>
+</div>
+</details></div></section><section class="chapter" data-title="زمان‌بندی در Solaris" id="section-17">
+<header class="chapter-header"><div class="chapter-meta">موضوع 17 <span class="meta-dot">·</span> 2 زیربخش</div><h2>زمان‌بندی در Solaris</h2></header>
+<div class="subsections"><details class="subsection" id="sub-17-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>Solaris شش کلاس معرفی‌شده دارد:</p>
+<table>
+<thead>
+<tr>
+<th>کلاس</th>
+<th>کاربرد</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TS</td>
+<td>اشتراک زمانی؛ پیش‌فرض</td>
+</tr>
+<tr>
+<td>IA</td>
+<td>تعاملی</td>
+</tr>
+<tr>
+<td>RT</td>
+<td>بلادرنگ</td>
+</tr>
+<tr>
+<td>SYS</td>
+<td>سیستم</td>
+</tr>
+<tr>
+<td>FSS</td>
+<td>سهم منصفانه</td>
+</tr>
+<tr>
+<td>FP</td>
+<td>اولویت ثابت</td>
+</tr>
+</tbody>
+</table>
+<p>هر نخ در هر لحظه در یک کلاس قرار دارد و هر کلاس الگوریتم خودش را دارد.</p>
+<p>کلاس Time Sharing از MLFQ استفاده می‌کند و رفتار آن با جدول قابل‌تنظیم مشخص می‌شود:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">اولویت فعلی</th>
+<th style="text-align:right">Quantum، میلی‌ثانیه</th>
+<th style="text-align:right">اولویت پس از پایان Quantum</th>
+<th style="text-align:right">اولویت پس از بازگشت از خواب</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">۰</td>
+<td style="text-align:right">۲۰۰</td>
+<td style="text-align:right">۰</td>
+<td style="text-align:right">۵۰</td>
+</tr>
+<tr>
+<td style="text-align:right">۵</td>
+<td style="text-align:right">۲۰۰</td>
+<td style="text-align:right">۰</td>
+<td style="text-align:right">۵۰</td>
+</tr>
+<tr>
+<td style="text-align:right">۱۰</td>
+<td style="text-align:right">۱۶۰</td>
+<td style="text-align:right">۰</td>
+<td style="text-align:right">۵۱</td>
+</tr>
+<tr>
+<td style="text-align:right">۱۵</td>
+<td style="text-align:right">۱۶۰</td>
+<td style="text-align:right">۵</td>
+<td style="text-align:right">۵۱</td>
+</tr>
+<tr>
+<td style="text-align:right">۲۰</td>
+<td style="text-align:right">۱۲۰</td>
+<td style="text-align:right">۱۰</td>
+<td style="text-align:right">۵۲</td>
+</tr>
+<tr>
+<td style="text-align:right">۲۵</td>
+<td style="text-align:right">۱۲۰</td>
+<td style="text-align:right">۱۵</td>
+<td style="text-align:right">۵۲</td>
+</tr>
+<tr>
+<td style="text-align:right">۳۰</td>
+<td style="text-align:right">۸۰</td>
+<td style="text-align:right">۲۰</td>
+<td style="text-align:right">۵۳</td>
+</tr>
+<tr>
+<td style="text-align:right">۳۵</td>
+<td style="text-align:right">۸۰</td>
+<td style="text-align:right">۲۵</td>
+<td style="text-align:right">۵۴</td>
+</tr>
+<tr>
+<td style="text-align:right">۴۰</td>
+<td style="text-align:right">۴۰</td>
+<td style="text-align:right">۳۰</td>
+<td style="text-align:right">۵۵</td>
+</tr>
+<tr>
+<td style="text-align:right">۴۵</td>
+<td style="text-align:right">۴۰</td>
+<td style="text-align:right">۳۵</td>
+<td style="text-align:right">۵۶</td>
+</tr>
+<tr>
+<td style="text-align:right">۵۰</td>
+<td style="text-align:right">۴۰</td>
+<td style="text-align:right">۴۰</td>
+<td style="text-align:right">۵۸</td>
+</tr>
+<tr>
+<td style="text-align:right">۵۵</td>
+<td style="text-align:right">۴۰</td>
+<td style="text-align:right">۴۵</td>
+<td style="text-align:right">۵۸</td>
+</tr>
+<tr>
+<td style="text-align:right">۵۹</td>
+<td style="text-align:right">۲۰</td>
+<td style="text-align:right">۴۹</td>
+<td style="text-align:right">۵۹</td>
+</tr>
+</tbody>
+</table>
+<p>کار مصرف‌کنندهٔ کامل Quantum معمولاً اولویت پایین‌تری می‌گیرد؛ کار برگشته از انتظار، اولویت بالاتری می‌گیرد. اولویت بالاتر هم Quantum کوتاه‌تری دارد. این رفتار به پاسخ کارهای تعاملی کمک می‌کند.</p>
+</div>
+</details><details class="subsection" id="sub-17-2">
+<summary><span class="sub-index">02</span><span>زیربخش 2</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>برای مقایسهٔ نخ‌های کلاس‌های مختلف، اولویت هر کلاس به <strong>اولویت سراسری</strong> تبدیل می‌شود:</p>
+<table>
+<thead>
+<tr>
+<th>محدودهٔ شکل</th>
+<th>گروه</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>۱۶۰ تا ۱۶۹</td>
+<td>نخ‌های وقفه</td>
+</tr>
+<tr>
+<td>۱۰۰ تا ۱۵۹</td>
+<td>Real-Time</td>
+</tr>
+<tr>
+<td>۶۰ تا ۹۹</td>
+<td>System</td>
+</tr>
+<tr>
+<td>۰ تا ۵۹</td>
+<td>TS، IA، FSS و اولویت ثابت</td>
+</tr>
+</tbody>
+</table>
+<p>کلاس اولویت ثابت در شکل با <code>FX</code> و در فهرست قبلی با <code>FP</code> آمده است.</p>
+<p>نخ با بالاترین اولویت سراسری اجرا می‌شود؛ میان هم‌اولویت‌ها RR برقرار است. اجرا تا مسدودشدن، پایان سهم یا پیش‌دستی ادامه پیدا می‌کند.</p>
+</div>
+</details></div></section><section class="chapter" data-title="چگونه الگوریتم مناسب را انتخاب کنیم؟" id="section-18">
+<header class="chapter-header"><div class="chapter-meta">موضوع 18 <span class="meta-dot">·</span> 3 زیربخش</div><h2>چگونه الگوریتم مناسب را انتخاب کنیم؟</h2></header>
+<div class="subsections"><details class="subsection" id="sub-18-1" open="">
+<summary><span class="sub-index">01</span><span>زیربخش 1</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>بعد از شناخت الگوریتم‌ها، باید آن‌ها را برای نیاز مشخص ارزیابی کنیم. ابتدا معیار را تعیین می‌کنیم؛ مثلاً انتظار، پاسخ یا بهره‌برداری.</p>
+<p>ساده‌ترین روش، <strong>مدل‌سازی قطعی</strong> است: ورودی دقیق می‌دهیم و رفتار الگوریتم‌ها را روی همان ورودی محاسبه می‌کنیم.</p>
+<p>مثال پایانی، پنج کار با ورود همگی در زمان صفر دارد:</p>
+<table>
+<thead>
+<tr>
+<th>فرایند</th>
+<th style="text-align:right">Burst</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+<td style="text-align:right">۱۰</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+<td style="text-align:right">۲۹</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_3\)</span></td>
+<td style="text-align:right">۳</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_4\)</span></td>
+<td style="text-align:right">۷</td>
+</tr>
+<tr>
+<td><span class="math-inline" dir="ltr">\(P_5\)</span></td>
+<td style="text-align:right">۱۲</td>
+</tr>
+</tbody>
+</table>
+<p>در FCFS:</p>
+<div class="math-display" dir="ltr">\[
+P_1 \rightarrow P_2 \rightarrow P_3 \rightarrow P_4 \rightarrow P_5
+\]</div>
+<p>زمان‌های شروع برابر <span class="math-inline" dir="ltr">\(0,10,39,42,49\)</span> هستند، پس:</p>
+<div class="math-display" dir="ltr">\[
+\overline{W}=\frac{0+10+39+42+49}{5}=28
+\]</div>
+<p>در SJF:</p>
+<div class="math-display" dir="ltr">\[
+P_3 \rightarrow P_4 \rightarrow P_1 \rightarrow P_5 \rightarrow P_2
+\]</div>
+<p>زمان‌های شروع <span class="math-inline" dir="ltr">\(0,3,10,20,32\)</span> هستند:</p>
+<div class="math-display" dir="ltr">\[
+\overline{W}=\frac{0+3+10+20+32}{5}=13
+\]</div>
+<p>نمودار RR با Quantum برابر ۱۰ هم چنین است:</p>
+<table>
+<thead>
+<tr>
+<th>بازه</th>
+<th>فرایند</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>۰ تا ۱۰</td>
+<td><span class="math-inline" dir="ltr">\(P_1\)</span></td>
+</tr>
+<tr>
+<td>۱۰ تا ۲۰</td>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+</tr>
+<tr>
+<td>۲۰ تا ۲۳</td>
+<td><span class="math-inline" dir="ltr">\(P_3\)</span></td>
+</tr>
+<tr>
+<td>۲۳ تا ۳۰</td>
+<td><span class="math-inline" dir="ltr">\(P_4\)</span></td>
+</tr>
+<tr>
+<td>۳۰ تا ۴۰</td>
+<td><span class="math-inline" dir="ltr">\(P_5\)</span></td>
+</tr>
+<tr>
+<td>۴۰ تا ۵۰</td>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+</tr>
+<tr>
+<td>۵۰ تا ۵۲</td>
+<td><span class="math-inline" dir="ltr">\(P_5\)</span></td>
+</tr>
+<tr>
+<td>۵۲ تا ۶۱</td>
+<td><span class="math-inline" dir="ltr">\(P_2\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><details class="subsection" id="sub-18-2">
+<summary><span class="sub-index">02</span><span>زیربخش 2</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>میانگین انتظار آن ۲۳ است.</p>
+<p>این روش سریع و ساده است، اما فقط دربارهٔ همان ورودی نتیجه می‌دهد.</p>
+<p>روش بعد، <strong>مدل صف</strong> است. ورود کارها و طول Burstهای CPU و I/O را احتمالی توصیف می‌کنیم؛ اسلاید توزیع نمایی را نمونه می‌آورد. سیستم به‌شکل شبکه‌ای از سرویس‌دهنده‌ها و صف‌ها مدل می‌شود.</p>
+<p>با نرخ ورود و نرخ خدمت می‌توان بهره‌برداری، Throughput، طول متوسط صف و انتظار متوسط را محاسبه کرد.</p>
+<p>یکی از رابطه‌های مهم، <strong>قانون لیتل</strong> است:</p>
+<div class="math-display" dir="ltr">\[
+n=\lambda W
+\]</div>
+<p>که در آن <span class="math-inline" dir="ltr">\(n\)</span> تعداد متوسط کارهای صف، <span class="math-inline" dir="ltr">\(\lambda\)</span> نرخ متوسط ورود و <span class="math-inline" dir="ltr">\(W\)</span> متوسط زمان انتظار در همان صف است.</p>
+<p>اگر در هر ثانیه به‌طور متوسط ۷ فرایند وارد شوند و متوسط تعداد فرایندهای صف ۱۴ باشد:</p>
+<div class="math-display" dir="ltr"><div class="mixed-formula" dir="ltr"><span class="math-inline" dir="ltr">\(W=\frac{14}{7}=2\)</span><span dir="rtl">ثانیه</span></div></div>
+<p>این رابطه در شرایط پایدار، به الگوریتم خاص یا شکل خاص توزیع ورود وابسته نیست.</p>
+<p>مدل‌های صف هم فرض‌های ساده‌کننده دارند. برای جزئیات بیشتر، از <strong>شبیه‌سازی</strong> استفاده می‌کنیم: سیستم را برنامه‌نویسی می‌کنیم، ساعت را به‌صورت متغیر نگه می‌داریم، رویدادها را اجرا و آمار جمع می‌کنیم.</p>
+</div>
+</details><details class="subsection" id="sub-18-3">
+<summary><span class="sub-index">03</span><span>زیربخش 3</span><span class="chevron">⌄</span></summary>
+<div class="sub-body content"><p>ورودی شبیه‌سازی می‌تواند از اعداد تصادفی، توزیع‌های ریاضی یا تجربی، یا <strong>Trace اجرای واقعی</strong> به دست آید.</p>
+<p>شکل اسلاید نشان می‌دهد یک Trace یکسان شامل توالی CPU و I/O را به شبیه‌سازهای FCFS، SJF و RR با <span class="math-inline" dir="ltr">\(q=14\)</span> می‌دهیم و آمارشان را مقایسه می‌کنیم. یکسان‌بودن بار کاری، مبنای مقایسه است.</p>
+<p>در نهایت، شبیه‌سازی هم تمام واقعیت را نشان نمی‌دهد. می‌توان زمان‌بند را واقعاً پیاده‌سازی و در سیستم واقعی آزمایش کرد؛ روشی با هزینه و ریسک بیشتر که نتیجه‌اش به محیط وابسته است.</p>
+<p>به همین دلیل بعضی زمان‌بندها برای هر سیستم قابل‌تنظیم‌اند و APIهایی برای تغییر اولویت دارند؛ انتخاب نهایی باید با رفتار همان محیط سنجیده شود.</p>
+</div>
+</details></div></section><div class="footer">پایان درس‌نامهٔ زمان‌بندی CPU</div></main></div><script>
+const search=document.getElementById('search');
+const chapters=[...document.querySelectorAll('.chapter')];
+const links=[...document.querySelectorAll('.nav-sub')];
+const allDetails=[...document.querySelectorAll('details.subsection')];
+const groups=[...document.querySelectorAll('.nav-group')];
+for(const t of document.querySelectorAll('.content table')){const wrap=document.createElement('div');wrap.className='table-wrap';t.parentNode.insertBefore(wrap,t);wrap.appendChild(t)}
+function filter(){const q=search.value.trim().toLocaleLowerCase('fa');let visible=0;for(const c of chapters){const ok=!q||c.textContent.toLocaleLowerCase('fa').includes(q);c.classList.toggle('hide',!ok);const group=groups[chapters.indexOf(c)];group.classList.toggle('hide',!ok);if(ok){visible++;if(q){group.open=true;c.querySelectorAll('details').forEach(d=>d.open=true)}}}document.getElementById('empty').style.display=visible?'none':'block'}
+search.addEventListener('input',filter);
+document.getElementById('expand').addEventListener('click',()=>allDetails.forEach(d=>d.open=true));
+document.getElementById('collapse').addEventListener('click',()=>allDetails.forEach(d=>d.open=false));
+document.getElementById('nav-expand').addEventListener('click',()=>groups.forEach(g=>g.open=true));
+document.getElementById('nav-collapse').addEventListener('click',()=>groups.forEach(g=>g.open=false));
+function closeMobile(){document.querySelector('.sidebar').classList.remove('open');document.getElementById('mobile-backdrop').classList.remove('open')}
+document.getElementById('mobile-open').addEventListener('click',()=>{document.querySelector('.sidebar').classList.add('open');document.getElementById('mobile-backdrop').classList.add('open')});
+document.getElementById('mobile-close').addEventListener('click',closeMobile);
+document.getElementById('mobile-backdrop').addEventListener('click',closeMobile);
+links.forEach(l=>l.addEventListener('click',()=>{const target=document.getElementById(l.dataset.target);if(target){target.open=true;links.forEach(x=>x.classList.remove('active'));l.classList.add('active');closeMobile();setTimeout(()=>target.scrollIntoView({behavior:'smooth',block:'start'}),20)}}));
+
+function refreshThemeButtons(){const dark=document.documentElement.dataset.theme==='dark';document.querySelector('.theme-label').textContent=dark?'حالت روشن':'حالت تاریک';document.querySelector('.theme-glyph').textContent=dark?'☀':'☾';document.getElementById('mobile-theme').textContent=dark?'☀':'☾';document.getElementById('theme-toggle').setAttribute('aria-pressed',String(dark))}function toggleTheme(){let next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;try{localStorage.setItem('cpu-site-theme',next)}catch(e){}refreshThemeButtons()}document.getElementById('theme-toggle').addEventListener('click',toggleTheme);document.getElementById('mobile-theme').addEventListener('click',toggleTheme);refreshThemeButtons();
+</script></body></html>
